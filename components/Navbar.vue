@@ -3,7 +3,7 @@
     <!-- NAVBAR -->
     <nav class="nav">
       <ul class="nav nav-pills">
-        <li class="nav-item"><a id="homeIcon" href="#" data-toggle="tooltip" data-placement="bottom" title="Home">index</a></li>
+        <li class="nav-item"><nuxt-link id="homeIcon" to="/" data-toggle="tooltip" data-placement="bottom" title="Landing Page">index</nuxt-link></li>
         <li class="nav-item">
           <!-- use router-link for link to other views -->
           <NuxtLink to="/" class="nav-link">Landing</NuxtLink>
@@ -19,14 +19,14 @@
           <a class="nav-link" href="#">social</a>
         </li>
         <li class="nav-item">
-          <button class="btn btn-info nav-link" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-placement="bottom" title="Click to Show/Hide">
+          <button class="btn btn-info nav-link" type="button" @click="toggle" data-placement="bottom" title="Click to Show/Hide">
             Spread the word!
           </button>
         </li>
       </ul>
     </nav>
       <!-- jumbotron through jumbotronArray array of objects. creates a prop to attach array items to (jumboprop). supply a key for vue. -->
-    <jumbotron class="collapse" id="collapseExample" v-for="item in jumbotronArray"
+    <jumbotron class="CTA" :class="show ? 'hide' : 'show'" v-for="item in jumbotronArray"
       v-bind:jumboprop="item"
       v-bind:key="item.id">
     </jumbotron>
@@ -37,11 +37,13 @@
 // ###### Link to Component File ######
 // import filename and path
 //import components. file path is relative to vue router js.
-import jumbotron from './Jumbotron.vue'
+import jumbotron from './Jumbotron.vue';
+import {toggle} from "../middleware/toggle.js";
 
 export default {
   name: 'navbar',//name of file, component, html tag
   components: { jumbotron },
+  mixins: [toggle],
 
   data() {
     return {
@@ -108,12 +110,12 @@ section {
   background: rgb(174,62,245);
   background: linear-gradient(315deg, rgba(174,62,245,1) 10%, rgba(32,32,255,1) 50%, rgba(71,148,255,1) 100%);
   padding-bottom: .1rem;
-}
-
-#collapseExample {
-  margin: 3rem;
-  padding: 3rem;
-  background: #f2f2f299;
+  & .show {
+    display: block;
+  }
+  & .hide {
+    display: none;
+  }
 }
 
 .card {
@@ -123,6 +125,18 @@ section {
   border-left: 40px solid #4b00c399;
   background: #f2f2f2;
   border-radius: 0 2rem 0 0;
+}
+
+.CTA {
+  margin-bottom: 2rem;
+  padding: 3rem 2rem 3rem 4rem;
+  border-right: 22px solid rgba(100, 0, 194, 0.25);
+  border-bottom: 10px solid rgba(74, 0, 194, 1);
+  background: #f2f2f299;
+  color: white;
+  border-radius: 2rem 0 0 0;
+  margin: 3rem;
+  padding: 3rem;
 }
 
 .CTAcontainer {

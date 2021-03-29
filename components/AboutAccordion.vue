@@ -28,7 +28,7 @@ data() {
   return {
       accordionArray: [
         { id: 0, title: 'About this project', image: image1, copy: "Undertaken with the belief that equal and convenient access to public facilities is an integral component of the civic trust, Seattle Playgrounds was born in the shadow of the 2020 pandemic to improve the quality of playground information for parents, childcare providers, and the general public. Thanks for stopping by! :D", legal: "This project is maintained by an independent individual of Seattle for the benefit of the civic good and is in no way affiliated with any governmental agency."},
-        { id: 1, title: "Resources", image: image2, copy: "For official park info from the city of Seattle please vist: www.seattle.gov/parks"},
+        { id: 1, title: "Resources", image: image2, copy: "For official park info from the city of Seattle please vist: <a>www.seattle.gov/parks</a>"},
         { id: 2, title: "What's the latest?", image: image3, copy: "Core functionality is currently under development. Stay tuned for addtional features! @SeattlePGs"}
       ]
     }

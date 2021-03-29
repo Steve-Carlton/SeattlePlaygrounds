@@ -44,10 +44,11 @@ html, body {
 .aboutImageContainer {
   display: grid;
   grid-row-gap: 2rem;
+
+  &img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
-.aboutImageContainer img {
-  max-width: 100%;
-  height: auto;
-}
 </style>
