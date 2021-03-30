@@ -2,29 +2,42 @@
   <main>
     <navbar></navbar>
     <section class="mapContainer"><h2 class="map">Map</h2></section>
-    <section class="playgroundsContainer"> <h2 class="playgrounds">List container</h2> </section>
+    <parklist></parklist>
   </main>
 </template>
 
 <script>
 //import components
 import navbar from '../components/Navbar.vue'
+import parklist from '../components/ParkList.vue'
+import axios from 'axios'
 
 export default {
   el: 'Map',
-  components: { navbar },//filename of new and used component
+  components: { navbar, parklist },//tag name of new and used component
   data() {
     return {
-
+      loading: true,
+      countries: null,
+      errored: false
     }
+  },
+  mounted () {
+  axios
+    .get('https://data.seattle.gov/resource/j9km-ydkc.json')
+    .then(response => (this.countries = response.data))
+    .catch(error => {
+      console.log(error)
+      this.errored = true
+    })
+    .finally(() => this.loading = false)
   }
-
   // ###### methods: {}
 
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 html, body {
   padding: 0;
@@ -37,7 +50,7 @@ main {
 
 }
 
-.mapContainer, .playgroundsContainer {
+.mapContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,16 +70,5 @@ main {
   margin: 1rem, auto;
 }
 
-.playgrounds {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: auto;
-  height: 8rem;
-  padding: 2rem;
-  color: white;
-  background: green;
-  margin: 1rem, auto;
-}
+
 </style>

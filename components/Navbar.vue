@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="navContainer">
     <!-- NAVBAR -->
     <nav class="nav">
       <ul class="nav nav-pills">
@@ -26,7 +26,7 @@
       </ul>
     </nav>
       <!-- jumbotron through jumbotronArray array of objects. creates a prop to attach array items to (jumboprop). supply a key for vue. -->
-    <jumbotron class="CTA" :class="show ? 'hide' : 'show'" v-for="item in jumbotronArray"
+    <jumbotron class="jumbotron" :class="show ? 'hide' : 'show'" v-for="item in jumbotronArray"
       v-bind:jumboprop="item"
       v-bind:key="item.id">
     </jumbotron>
@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 /* ~~~~~NAV~~~~~ */
-nav {
+.nav {
   width: auto;
   display: flex;
   justify-content: left;
@@ -70,7 +70,7 @@ nav {
   width: 100%;
 }
 
-nav a, nav button {
+.nav a, .nav button {
   border-left: 1px solid grey;
   border-bottom: 1px solid grey;
   border-top: 1px solid lightgrey;
@@ -93,7 +93,7 @@ nav a, nav button {
 }
 
 @media only screen and (max-width: 474px) {
-  nav ul {
+  .nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,16 +106,19 @@ nav a, nav button {
   }
 }
 
-section {
+.navContainer {
   background: rgb(174,62,245);
   background: linear-gradient(315deg, rgba(174,62,245,1) 10%, rgba(32,32,255,1) 50%, rgba(71,148,255,1) 100%);
-  padding-bottom: .1rem;
   & .show {
     display: block;
   }
   & .hide {
     display: none;
   }
+}
+
+.jumbotron {
+ margin: 2rem;
 }
 
 .card {
@@ -177,5 +180,12 @@ background: #0544ff;
 border-radius: 8px;
 width: 8rem;
 height: 4rem;
+}
+
+@media only screen and (min-width: 1250px) {
+  .navContainer .show {
+    display: flex;
+  }
+
 }
 </style>

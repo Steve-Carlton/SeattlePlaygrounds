@@ -1,10 +1,10 @@
 <template>
-  <section>
+  <section class="jumbotron">
     <h2>{{jumboprop.jumboTagline}}</h2>
     <h3 class="lead">{{jumboprop.jumboSubTag}}</h3>
     <!-- if jumboGraphics array item present, render on page -->
     <div v-if="jumboprop.jumboGraphics" class="CTAcontainer">
-      <a href="https://www.twitter.com/" target="blank"><i class="fab fa-twitter fa-5x twitterCTA"></i></a>
+      <a href="https://www.twitter.com/" target="blank"><img class="twitterCTA" src="../assets/img/twitter-bird.png" alt="www.twitter.com"></a>
       <a class="button" href="https://www.twitter.com" target="_blank">{{jumboprop.jumboGraphics}}</a>
     </div>
     <p>{{ jumboprop.jumboCopy }}</p>
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  section {
+  .jumbotron {
     margin-bottom: 2rem;
     padding: 3rem 2rem 3rem 4rem;
     border-right: 22px solid rgba(100, 0, 194, 0.25);
@@ -58,8 +58,9 @@ export default {
     align-items: center;
   }
 
-  .fab {
+  .twitterCTA {
     color: #1DA1F2;
+    margin-bottom: .75rem;
   }
 
   .CTAcontainer .button {
@@ -104,7 +105,7 @@ export default {
 
 
   @media only screen and (max-width: 330px) {
-    section {
+    .jumbotron {
       margin: 1rem;
       padding: 1.5rem;
       border-bottom: 30px solid #00c3a899;
@@ -114,12 +115,12 @@ export default {
   }
 
   @media only screen and (min-width: 1250px) {
-    section {
+    .jumbotron {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    section h2, section h3 {
+    .jumbotron h2, .jumbotron h3 {
       line-height: 2.5rem;
     }
     .jumboButton-container {
