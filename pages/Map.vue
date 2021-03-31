@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       loading: true,
-      park: null,
+      parks: null,
       errored: false
     }
   },
