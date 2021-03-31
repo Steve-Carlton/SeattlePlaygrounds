@@ -1,30 +1,39 @@
 <template>
-  <section class="parksContainer">
-    <h2 class="parks">Park List</h2>
+  <section>
+    <header class="parkListContainer">
+      <h2 class="parkListTitle">Park List Title</h2>
+    </header>
+    <section class="cardContainer">
+        <article class="card">
+          <h2 class="card__title">{{ park.name }}</h2>
+        </article>
+    </section>
   </section>
 </template>
 
 <script>
+
 export default {
   name: 'parklist',
 	props: {
-		parks: Object
+		park: Object
 	}
 }
+
 </script>
 
 
 <style lang="scss" scoped>
 
-.parksContainer {
+.parkListContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
-  padding: 10%;
+  padding: 1rem;
 }
 
-.parks {
+.parkListTitle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,5 +44,24 @@ export default {
   color: white;
   background: green;
   margin: 1rem, auto;
+}
+
+.cardContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.card {
+	margin: 1rem;
+	border: 1px solid #000;
+	padding: 1.5rem;
+	max-width: 200px;
+  &.__title {
+    color: black;
+  }
 }
 </style>

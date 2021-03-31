@@ -2,7 +2,12 @@
   <main>
     <navbar></navbar>
     <section class="mapContainer"><h2 class="map">Map</h2></section>
-    <parklist></parklist>
+    <parklist v-if="parks"
+      v-for="park of parks"
+      :key="park.id"
+      :park="park"
+      >
+      </parklist>
   </main>
 </template>
 
@@ -18,14 +23,14 @@ export default {
   data() {
     return {
       loading: true,
-      countries: null,
+      park: null,
       errored: false
     }
   },
   mounted () {
   axios
-    .get('https://data.seattle.gov/resource/j9km-ydkc.json')
-    .then(response => (this.countries = response.data))
+    .get('https://data.seattle.gov/resource/j9km-ydkc.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1')
+    .then(response => (this.parks = response.data))
     .catch(error => {
       console.log(error)
       this.errored = true
@@ -33,7 +38,6 @@ export default {
     .finally(() => this.loading = false)
   }
   // ###### methods: {}
-
 }
 </script>
 
@@ -47,7 +51,6 @@ html, body {
 
 main {
   border: 2px solid teal;
-
 }
 
 .mapContainer {
