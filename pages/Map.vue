@@ -2,12 +2,18 @@
   <main>
     <navbar></navbar>
     <section class="mapContainer"><h2 class="map">Map</h2></section>
-    <parklist v-if="parks"
-      v-for="park of parks"
-      :key="park.id"
-      :park="park"
-      >
-      </parklist>
+    <section class="parkList">
+      <header class="parkList header">Park List</header>
+      <article class="cardContainer">
+        <parklist v-if="parks"
+          v-for="park of parks"
+          :key="park.id"
+          :park="park"
+          >
+          </parklist>
+      </article>
+
+    </section>
   </main>
 </template>
 
@@ -71,6 +77,26 @@ main {
   color: white;
   background: blue;
   margin: 1rem, auto;
+}
+
+header {
+  color: white;
+  margin: 1rem;
+  font-size: 2rem;
+  background-color: teal;
+  padding: .5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.cardContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 
