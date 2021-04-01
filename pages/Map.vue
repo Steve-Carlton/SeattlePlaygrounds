@@ -35,8 +35,11 @@ export default {
   },
   mounted () {
   axios
-    .get('https://data.seattle.gov/resource/j9km-ydkc.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1')
-    .then(response => (this.parks = response.data))
+    .get('https://data.seattle.gov/resource/j9km-ydkc.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1&$where=feature_desc="Play Area (ADA Compliant)" OR feature_desc="Play Area"')
+    .then(response => {
+      console.log(response) // or response.data check for 
+      (this.parks = response.data)
+    })//call .sort method on response. assign it to this.parks
     .catch(error => {
       console.log(error)
       this.errored = true
