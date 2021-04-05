@@ -14,7 +14,7 @@
 export default {
   name: 'parklist',
 	props: {
-		park: String
+		park: Object
 	}
 }
 </script>
