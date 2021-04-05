@@ -1,7 +1,10 @@
 <template>
   <main>
     <navbar></navbar>
-    <section class="mapContainer"><h2 class="map">Map</h2></section>
+    <section class="mapContainer">
+      <h2 class="map">Map</h2>
+    </section>
+    <div id="mapid"></div>
     <section class="parkList">
       <header class="parkList header">Park List</header>
       <article class="cardContainer">
@@ -33,28 +36,36 @@ export default {
       errored: false
     }
   },
+  //####GET AND SORT API DATA####
   mounted () {
   axios
     .get('https://data.seattle.gov/resource/j9km-ydkc.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1&$where=feature_desc="Play Area (ADA Compliant)" OR feature_desc="Play Area"')
     .then(response => {
      // or response.data. Can validate data at this point.
-     //response is an object containing an array of objects. response.data is the array of objects. Use .sort method on response. assign it to this.parks
-     //response.data points to the array.
-
+     //response is an object containing an array of objects. response.data points to the array of objects. Use .sort method on response. assign it to this.parks
       // ###Assigns response.data to sortParks. Applies array method .sort(), which takes the function with two parameters as written below..
       let sortParks = response.data.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
       console.log(sortParks);
 
       (this.parks = sortParks)
-
     })
-
     .catch(error => {
       console.log(error)
       this.errored = true
     })
     .finally(() => this.loading = false)
+//####----MAP----####
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'your.mapbox.access.token'
+}).addTo(mymap);
   }
+
   // ###### methods: {}
 }
 </script>
@@ -86,9 +97,14 @@ main {
   text-align: center;
   width: 8rem;
   height: 8rem;
-  color: white;
-  background: blue;
+  color: black;
+  border: 1px solid black;
+  background: none;
   margin: 1rem, auto;
+}
+
+#mapid {
+  height: 15rem;
 }
 
 header {
