@@ -37,35 +37,15 @@ export default {
   axios
     .get('https://data.seattle.gov/resource/j9km-ydkc.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1&$where=feature_desc="Play Area (ADA Compliant)" OR feature_desc="Play Area"')
     .then(response => {
- // or response.data. Can validate data at this point.
-      //response is an object containing an array of objects. response.data is the array of objects. Use .sort method on response. assign it to this.parks
-      //response.data points to the array.
+     // or response.data. Can validate data at this point.
+     //response is an object containing an array of objects. response.data is the array of objects. Use .sort method on response. assign it to this.parks
+     //response.data points to the array.
 
-      // ###PUTS VALUE OF NAME PROPERTY IN A NEW ARRAY. THAT NEW ARRAY IS PUT INTO ANOTHER NEW ARRAY WHERE IT IS SORTED ALPHABETICALLY.
-
+      // ###Assigns response.data to sortParks. Applies array method .sort(), which takes the function with two parameters as written below..
       let sortParks = response.data.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
-console.log(sortParks);
+      console.log(sortParks);
 
-        (this.parks = sortParks)
-      // sortResponse = (a, b) => {
-      //   let comparison = 0;
-      //   let aSort = a.name;
-      //   let bSort = b.name;
-      //
-      //   if (aSort > bSort) {
-      //     comparison = 1;
-      //   } else if (aSort < bSort) {
-      //     comparison = -1;
-      //   } else {
-      //     comparison = 0;
-      //   }
-      //   return comparison;
-      // }
-      // console.log(response.data.sort(sortResponse)); //sortResponse is not defined at eval
-      // console.log(response.data[0].name); // this returns park name of array idex
-      // console.log(response.data); // this returns all API data
-      // (this.parks = response.data) //previous code
-
+      (this.parks = sortParks)
 
     })
 
