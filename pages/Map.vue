@@ -1,10 +1,8 @@
 <template>
   <main>
     <navbar></navbar>
-    <section class="mapContainer">
-      <h2 class="map">Map</h2>
-    </section>
     <div id="mapid"></div>
+
     <section class="parkList">
       <header class="parkList header">Park List</header>
       <article class="cardContainer">
@@ -54,16 +52,21 @@ export default {
       this.errored = true
     })
     .finally(() => this.loading = false)
-//####----MAP----####
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+//####----LEAFLET.JS MAP----####
+    var mymap = L.map('mapid').setView([47.62051, -122.34930], 12.5);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
+    accessToken: 'pk.eyJ1Ijoic3RjYXJsdG9uIiwiYSI6ImNrbjY5dHoyaTAxaXYycG8wZWF2azJxN2QifQ.zOTxW9CuYgd41kecUhOtVA'
+    }).addTo(mymap);
+
+//####----LEAFLET.JS MAP MARKERS----####
+var marker = L.marker([47.57849726, -122.4073123]).addTo(mymap);
+
+
   }
 
   // ###### methods: {}
@@ -104,7 +107,11 @@ main {
 }
 
 #mapid {
-  height: 15rem;
+  height: 50vh;
+  margin: 2rem;
+  padding: 0 2rem;
+  border: 1.5rem solid lightsteelblue;
+  border-radius: 8px;
 }
 
 header {
@@ -122,7 +129,7 @@ header {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   flex-wrap: wrap;
 }

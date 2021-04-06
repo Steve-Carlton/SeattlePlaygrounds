@@ -3,7 +3,7 @@
     <article class="card">
       <h5 class="card__title">{{ park.name }}</h5>
       <h6>Park Hours: {{ park.hours }} </h6>
-      <p>feature_desc: {{ park.feature_desc }}</p>
+      <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p>
 
     </article>
   </section>
