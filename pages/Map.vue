@@ -45,13 +45,16 @@ export default {
       let sortParks = response.data.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
 
       (this.parks = sortParks)
+
       //####----LEAFLET.JS MAP MARKERS----####
+      //#### Screens for undefined data, then iterates map markers####
       for (let i = 0; i < sortParks.length; i++) {
+        if (sortParks[i].xpos === undefined) {
+          continue; // Jumps to expression: i++
+      } else {
         let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos]).addTo(mymap);
-        console.log(sortParks[i].xpos);
+        }
       }
-
-
     })
     .catch(error => {
       console.log(error)
@@ -60,7 +63,7 @@ export default {
     .finally(() => this.loading = false)
 
 //####----LEAFLET.JS MAP----####
-    var mymap = L.map('mapid').setView([47.62051, -122.34930], 12.5);
+    var mymap = L.map('mapid').setView([47.62051, -122.34930], 12);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -69,11 +72,6 @@ export default {
     zoomOffset: -1,
     accessToken: 'pk.eyJ1Ijoic3RjYXJsdG9uIiwiYSI6ImNrbjY5dHoyaTAxaXYycG8wZWF2azJxN2QifQ.zOTxW9CuYgd41kecUhOtVA'
     }).addTo(mymap);
-
-//####----LEAFLET.JS MAP MARKERS----####
-// var marker2 = L.marker([47.57849726, -122.4073123]).addTo(mymap);
-// var marker3 = L.marker([47.589165, -122.30566 ]).addTo(mymap);
-// console.log(sortParks);
 
   }
 
