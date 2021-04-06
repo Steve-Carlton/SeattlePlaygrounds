@@ -43,15 +43,22 @@ export default {
      //response is an object containing an array of objects. response.data points to the array of objects. Use .sort method on response. assign it to this.parks
       // ###Assigns response.data to sortParks. Applies array method .sort(), which takes the function with two parameters as written below..
       let sortParks = response.data.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
-      console.log(sortParks);
 
       (this.parks = sortParks)
+      //####----LEAFLET.JS MAP MARKERS----####
+      for (let i = 0; i < sortParks.length; i++) {
+        let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos]).addTo(mymap);
+        console.log(sortParks[i].xpos);
+      }
+
+
     })
     .catch(error => {
       console.log(error)
       this.errored = true
     })
     .finally(() => this.loading = false)
+
 //####----LEAFLET.JS MAP----####
     var mymap = L.map('mapid').setView([47.62051, -122.34930], 12.5);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -64,8 +71,9 @@ export default {
     }).addTo(mymap);
 
 //####----LEAFLET.JS MAP MARKERS----####
-var marker = L.marker([47.57849726, -122.4073123]).addTo(mymap);
-
+// var marker2 = L.marker([47.57849726, -122.4073123]).addTo(mymap);
+// var marker3 = L.marker([47.589165, -122.30566 ]).addTo(mymap);
+// console.log(sortParks);
 
   }
 
