@@ -37,7 +37,7 @@ export default {
   //####GET AND SORT API DATA####
   mounted () {
   axios
-    .get('https://data.seattle.gov/resource/j9km-ydkc.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1&$where=feature_desc="Play Area (ADA Compliant)" OR feature_desc="Play Area"')
+    .get('https://data.seattle.gov/resource/2cer-njie.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1&$where=feature_desc="Play Area (ADA Compliant)" OR feature_desc="Play Area"')
     .then(response => {
      // or response.data. Can validate data at this point.
      //response is an object containing an array of objects. response.data points to the array of objects. Use .sort method on response. assign it to this.parks
