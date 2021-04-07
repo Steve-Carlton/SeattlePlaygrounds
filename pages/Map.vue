@@ -41,6 +41,19 @@ export default {
     .then(response => {
      // or response.data. Can validate data at this point.
      //response is an object containing an array of objects. response.data points to the array of objects. Use .sort method on response. assign it to this.parks
+
+    //****CUSTOM MAP ICON****
+     let flagMapIcon = L.icon({
+       iconUrl:'/flagMapIcon.png', //worked once images were moved into static folder.
+       shadowUrl: '/flagMapIconShadow.png',
+
+       iconSize: [33, 49],
+       shadowSize: [32, 20],
+       iconAnchor: [2, 48],
+       shadowAnchor: [0, 20],
+       popupAnchor: [2, -40]
+     });
+
       // ###Assigns response.data to sortParks. Applies array method .sort(), which takes the function with two parameters as written below..
       let sortParks = response.data.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
 
@@ -52,7 +65,7 @@ export default {
         if (sortParks[i].xpos === undefined) {
           continue; // Jumps to expression: i++
       } else {
-        let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos]).addTo(mymap);
+        let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos], {icon: flagMapIcon}).addTo(mymap);
 
         marker.bindPopup(sortParks[i].name);
         }
