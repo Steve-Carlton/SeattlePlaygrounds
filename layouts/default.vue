@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <bannerTop></bannerTop>
     <Nuxt/>
   </div>
 </template>
 
 <script>
 // ##### COMPONENTS #####
-import BannerTop from '../components/BannerTop.vue'
 
 // ##### VUE.js #####
 export default {
   el: '#app',
-  components: { BannerTop },
   data() {
     return {
     }

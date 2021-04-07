@@ -1,10 +1,10 @@
 <template>
   <main>
+    <bannerTop></bannerTop>
     <navbar></navbar>
     <div id="mapid"></div>
-
     <section class="parkList">
-      <header class="parkList header">Park List</header>
+      <header class="parkList__header">Park List</header>
       <article class="cardContainer">
         <parklist v-if="parks"
           v-for="park of parks"
@@ -20,13 +20,14 @@
 
 <script>
 //import components
+import BannerTop from '../components/BannerTop.vue'
 import navbar from '../components/Navbar.vue'
 import parklist from '../components/ParkList.vue'
 import axios from 'axios'
 
 export default {
   name: 'Map',
-  components: { navbar, parklist },//tag name of new and used component
+  components: { bannerTop, navbar, parklist },//tag name of new and used component
   data() {
     return {
       loading: true,
@@ -102,8 +103,9 @@ html, body {
   box-sizing: border-box;
 }
 
-main {
-  border: 2px solid teal;
+.header {
+  background: rgb(32,32,255);
+  background: linear-gradient(315deg, rgba(32,32,255,1) 0%, rgba(71,148,255,1) 100%);
 }
 
 .mapContainer {
@@ -135,7 +137,7 @@ main {
   border-radius: 8px;
 }
 
-header {
+.parkList__header {
   color: white;
   margin: 1rem;
   font-size: 2rem;

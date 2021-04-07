@@ -30,7 +30,6 @@ export default {
     align-items: center;
     text-align: center;
     justify-content: center;
-    background-color: #47c9ff;
     color: #ffffff;
 
   }

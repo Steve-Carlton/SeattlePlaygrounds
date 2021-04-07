@@ -1,5 +1,6 @@
 <template>
 <main class="about">
+  <bannerTop></bannerTop>
   <navbar></navbar>
   <h2>What would you like to know?</h2>
   <section class="about__aboutContainer">
@@ -20,12 +21,13 @@
 </template>
 <script>
 //import components
+import BannerTop from '../components/BannerTop.vue'
 import navbar from '../components/Navbar.vue'
 import imageContainer from '../components/ImageContainer.vue'
 import aboutAccordion from '../components/AboutAccordion.vue'
 
 export default {
-  components: { navbar, imageContainer, aboutAccordion },//filename of new and used component
+  components: { bannerTop, navbar, imageContainer, aboutAccordion },//filename of new and used component
   data() {
     return {
       imageArray: [
@@ -43,6 +45,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.header {
+  background: rgb(32,32,255);
+  background: linear-gradient(315deg, rgba(32,32,255,1) 0%, rgba(71,148,255,1) 100%);
+}
 
 main {
   background-color: #7fc0eb;
