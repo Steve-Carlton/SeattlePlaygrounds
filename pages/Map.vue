@@ -45,14 +45,16 @@ export default {
       let sortParks = response.data.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
 
       (this.parks = sortParks)
-
+      console.log(sortParks);
       //####----LEAFLET.JS MAP MARKERS----####
-      //#### Screens for undefined data, then iterates map markers####
+      //#### Screens out undefined data in the API, then iterates map markers####
       for (let i = 0; i < sortParks.length; i++) {
         if (sortParks[i].xpos === undefined) {
           continue; // Jumps to expression: i++
       } else {
         let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos]).addTo(mymap);
+
+        marker.bindPopup(sortParks[i].name);
         }
       }
     })
