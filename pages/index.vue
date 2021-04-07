@@ -11,8 +11,8 @@
 
 <script>
 //import components. file path is relative to vue router js.
+import bannerTop from '../components/BannerTop.vue'
 import jumbotron from '../components/Jumbotron.vue'
-import BannerTop from '../components/BannerTop.vue'
 
 export default {
   name: 'Landing',

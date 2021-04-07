@@ -20,7 +20,7 @@
 
 <script>
 //import components
-import BannerTop from '../components/BannerTop.vue'
+import bannerTop from '../components/BannerTop.vue'
 import navbar from '../components/Navbar.vue'
 import parklist from '../components/ParkList.vue'
 import axios from 'axios'

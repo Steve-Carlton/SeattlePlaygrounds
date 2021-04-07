@@ -21,7 +21,7 @@
 </template>
 <script>
 //import components
-import BannerTop from '../components/BannerTop.vue'
+import bannerTop from '../components/BannerTop.vue'
 import navbar from '../components/Navbar.vue'
 import imageContainer from '../components/ImageContainer.vue'
 import aboutAccordion from '../components/AboutAccordion.vue'
