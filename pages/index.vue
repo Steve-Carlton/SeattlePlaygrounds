@@ -16,7 +16,7 @@ import jumbotron from '../components/Jumbotron.vue'
 
 export default {
   name: 'Landing',
-  components: { jumbotron, bannerTop },
+  components: { bannerTop, jumbotron },
   data() {
     return {
       jumbotronArray: [//this is an array of objects
