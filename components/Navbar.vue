@@ -112,7 +112,7 @@ export default {
   & .show {
     display: block;
     background: rgba(174,62,245,.5);
-    background: linear-gradient( rgba(174,62,245,.5) 45%, rgba(32,32,255,.25) 100%);
+    background: linear-gradient(343deg, rgba(174,62,245,.5) 35%, rgba(40,40,255,.5) 100%);
     border: none;
     border-radius: 2rem;
   }
