@@ -1,9 +1,9 @@
 <template>
   <section>
-    <article class="card">
-      <h5 class="card__title">{{ park.name }}</h5>
+    <article class="tiles">
+      <h5 class="tiles__title">{{ park.name }}</h5>
       <h6>Park Hours: {{ park.hours }} </h6>
-      <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p>
+      <!-- <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p> -->
       <!-- <p>Address: {{park.location_1.human_address}}</p> -->
       <p>{{ park.feature_desc }}</p>
 
@@ -26,13 +26,15 @@ export default {
 
 <style lang="scss" scoped>
 
-.card {
+.tiles {
 	margin: 1rem;
-	border: 1px solid #000;
+  border-radius: 1rem;
+  background: rgba(200, 200, 200, .35);
 	padding: 1.5rem;
 	max-width: 200px;
-  &.__title {
-    color: black;
+  color: #fff;
+  &__title {
+    font-weight: bold;
   }
 }
 </style>

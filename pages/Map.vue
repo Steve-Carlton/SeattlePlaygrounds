@@ -110,11 +110,6 @@ main {
   background: linear-gradient(315deg, rgba(174,62,245,1) 10%, rgba(32,32,255,1) 50%, rgba(71,148,255,1) 100%);
 }
 
-// .header {
-//   background: rgb(32,32,255);
-//   background: linear-gradient( rgba(32,32,255,1) 0%, rgba(71,148,255,1) 100%);
-// }
-
 .mapContainer {
   display: flex;
   justify-content: center;

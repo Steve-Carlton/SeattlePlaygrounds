@@ -108,8 +108,6 @@ export default {
     .jumbotron {
       margin: 1rem;
       padding: 1.5rem;
-      border-bottom: 30px solid #00c3a899;
-      border-left: 30px solid #4b00c399;
       font-size: 1rem;
     }
   }
