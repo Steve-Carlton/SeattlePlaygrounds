@@ -6,14 +6,9 @@
     <section class="parkList">
       <header class="parkList__header">Park List</header>
       <article class="cardContainer">
-        <parklist v-if="parks"
-          v-for="park of parks"
-          :key="park.id"
-          :park="park"
-          >
-          </parklist>
+        <parklist v-if="parks" v-for="park of parks" :key="park.id" :park="park">
+        </parklist>
       </article>
-
     </section>
   </main>
 </template>
@@ -32,22 +27,28 @@ export default {
     return {
       loading: true,
       parks: null,
-      errored: false
+      errored: false,
+      parkUrls: [
+        { id: 0, }
+      ]
     }
   },
   //####GET AND SORT API DATA####
   mounted () {
   axios
     .get('https://data.seattle.gov/resource/2cer-njie.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1&$where=feature_desc="Play Area (ADA Compliant)" OR feature_desc="Play Area"')
+
+    //Edited Dataset
+    // .get('https://data.seattle.gov/resource/sfg9-akgs.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1&$where=feature_desc="Play Area (ADA Compliant)" OR feature_desc="Play Area"')
+
     .then(response => {
      // or response.data. Can validate data at this point.
      //response is an object containing an array of objects. response.data points to the array of objects. Use .sort method on response. assign it to this.parks
 
     //****CUSTOM MAP ICON****
      let flagMapIcon = L.icon({
-       iconUrl:'/flagMapIcon.png', //worked once images were moved into static folder.
+       iconUrl:'/flagMapIcon.png', //works now that images were moved into static folder.
        shadowUrl: '/flagMapIconShadow.png',
-
        iconSize: [33, 49],
        shadowSize: [32, 20],
        iconAnchor: [2, 48],
@@ -60,6 +61,7 @@ export default {
 
       (this.parks = sortParks)
       console.log(sortParks);
+
       //####----LEAFLET.JS MAP MARKERS----####
       //#### Screens out undefined data in the API, then iterates map markers####
       for (let i = 0; i < sortParks.length; i++) {
@@ -103,10 +105,15 @@ html, body {
   box-sizing: border-box;
 }
 
-.header {
-  background: rgb(32,32,255);
-  background: linear-gradient(315deg, rgba(32,32,255,1) 0%, rgba(71,148,255,1) 100%);
+main {
+  background: rgba(32,32,255,1);
+  background: linear-gradient(315deg, rgba(174,62,245,1) 10%, rgba(32,32,255,1) 50%, rgba(71,148,255,1) 100%);
 }
+
+// .header {
+//   background: rgb(32,32,255);
+//   background: linear-gradient( rgba(32,32,255,1) 0%, rgba(71,148,255,1) 100%);
+// }
 
 .mapContainer {
   display: flex;
@@ -116,22 +123,10 @@ html, body {
   padding: 10%;
 }
 
-.map {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 8rem;
-  height: 8rem;
-  color: black;
-  border: 1px solid black;
-  background: none;
-  margin: 1rem, auto;
-}
 
 #mapid {
   height: 50vh;
-  margin: 2rem;
+  margin: 2.5rem;
   padding: 0 2rem;
   border: 1.5rem solid lightsteelblue;
   border-radius: 8px;
@@ -141,7 +136,7 @@ html, body {
   color: white;
   margin: 1rem;
   font-size: 2rem;
-  background-color: teal;
+  background-color: rgba(0,195,168,0.6);
   padding: .5rem;
   border-radius: 8px;
   font-weight: bold;

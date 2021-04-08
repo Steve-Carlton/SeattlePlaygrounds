@@ -31,7 +31,7 @@ export default {
 
 <style scoped lang="scss">
  main {
-   padding: 3rem;
+   padding: 0 3rem 3rem;
    background: rgb(174,62,245);
    background: linear-gradient(315deg, rgba(174,62,245,1) 10%, rgba(32,32,255,1) 50%, rgba(71,148,255,1) 100%);
  }

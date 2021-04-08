@@ -4,6 +4,8 @@
       <h5 class="card__title">{{ park.name }}</h5>
       <h6>Park Hours: {{ park.hours }} </h6>
       <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p>
+      <!-- <p>Address: {{park.location_1.human_address}}</p> -->
+      <p>{{ park.feature_desc }}</p>
 
     </article>
   </section>
@@ -11,12 +13,14 @@
 
 <script>
 
+
 export default {
   name: 'parklist',
 	props: {
 		park: Object
 	}
 }
+
 </script>
 
 

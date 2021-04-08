@@ -62,8 +62,6 @@ export default {
   display: flex;
   justify-content: left;
   align-items: center;
-  border: 2px solid blue;
-  background: white;
 }
 
 .nav-pills {
@@ -77,6 +75,9 @@ export default {
   border-right: 1px solid lightgrey;
   border-radius: 10px;
   margin: 1rem;
+  background: #f2f2f299;
+  color: white;
+  text-shadow: 2px 1px 4px #000000;
 }
 
 #homeIcon {
@@ -107,11 +108,13 @@ export default {
 }
 
 .navContainer {
-  background: rgb(174,62,245);
-  background: linear-gradient(315deg, rgba(174,62,245,1) 10%, rgba(32,32,255,1) 50%, rgba(71,148,255,1) 100%);
   padding-bottom: 0;
   & .show {
     display: block;
+    background: rgba(174,62,245,.5);
+    background: linear-gradient( rgba(174,62,245,.5) 45%, rgba(32,32,255,.25) 100%);
+    border: none;
+    border-radius: 2rem;
   }
   & .hide {
     display: none;

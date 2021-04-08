@@ -31,7 +31,7 @@ export default {
 }
 
 .blue {
-  border: 2px solid blue;
+  border: 2px solid black;
 }
 
 </style>

@@ -46,13 +46,10 @@ export default {
 
 <style scoped lang="scss">
 
-.header {
-  background: rgb(32,32,255);
-  background: linear-gradient(315deg, rgba(32,32,255,1) 0%, rgba(71,148,255,1) 100%);
-}
 
 main {
-  background-color: #7fc0eb;
+  background: rgba(32,32,255,1);
+  background: linear-gradient(315deg, rgba(174,62,245,1) 10%, rgba(32,32,255,1) 50%, rgba(71,148,255,1) 100%);
 }
 
 h2 {
