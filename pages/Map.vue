@@ -56,11 +56,11 @@ export default {
        popupAnchor: [2, -40]
      });
 
-      // ###Assigns response.data to sortParks. Applies array method .sort(), which takes the function with two parameters as written below..
+      // ###Assigns response.data to sortParks. Applies array method .sort(), which takes the function with two parameters as written below.
       let sortParks = response.data.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
 
       (this.parks = sortParks)
-      console.log(sortParks);
+
 
       //####----LEAFLET.JS MAP MARKERS----####
       //#### Screens out undefined data in the API, then iterates map markers####
@@ -69,10 +69,33 @@ export default {
           continue; // Jumps to expression: i++
       } else {
         let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos], {icon: flagMapIcon}).addTo(mymap);
-
         marker.bindPopup(sortParks[i].name);
         }
+        if (sortParks[i].location_1 === undefined) {
+          continue;
+        } else {
+          function getAddress() {
+            let data = sortParks[i].location_1.human_address;
+            var txt = data.replace(/"/g,""); //global replace
+            var txt2 = txt.replace("{address: ","");
+            var txt3 = txt2.split(",");
+            console.log(txt3[0]);
+          }
+          getAddress();
+        }
       }
+      // console.log(sortParks);
+      // console.log(sortParks[0].location_1.human_address);
+      //use string methods search, replace
+      // function getAddress() {
+      //   let data = sortParks[i].location_1.human_address;
+      //   var txt = data.replace(/"/g,""); //global replace
+      //   var txt2 = txt.replace(/{address: /g,"");
+      //   var txt3 = txt2.split(",");
+      //   console.log(txt3[0]);
+      // }
+      // getAddress();
+
     })
     .catch(error => {
       console.log(error)
@@ -123,7 +146,7 @@ main {
   height: 50vh;
   margin: 2.5rem;
   padding: 0 2rem;
-  border: 1.5rem solid lightsteelblue;
+  border: .5rem solid lightsteelblue;
   border-radius: 8px;
 }
 

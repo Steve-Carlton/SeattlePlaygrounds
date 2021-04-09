@@ -75,9 +75,9 @@ export default {
   border-right: 1px solid lightgrey;
   border-radius: 10px;
   margin: 1rem;
-  background: #f2f2f299;
+  background: #f2f2f225;
   color: white;
-  text-shadow: 2px 1px 4px #000000;
+  text-shadow: 2px 1px 4px #00000025;
 }
 
 #homeIcon {
