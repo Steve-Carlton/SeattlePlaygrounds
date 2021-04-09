@@ -4,7 +4,8 @@
       <h5 class="tiles__title">{{ park.name }}</h5>
       <h6>Park Hours: {{ park.hours }} </h6>
       <!-- <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p> -->
-      <p>Address: {{park.location_1}}</p>
+      <!-- <p id="parkAddress">Address: {{park.location_1}}</p> -->
+      <!-- <p id="parkAddress">Address: {{parkAddress}}</p> -->
       <p>{{ park.feature_desc }}</p>
 
     </article>
@@ -12,13 +13,15 @@
 </template>
 
 <script>
+import {getAddress} from "../middleware/getAddress.js"
 
 
 export default {
   name: 'parklist',
 	props: {
 		park: Object
-	}
+	},
+  mixins: [getAddress]
 }
 
 </script>

@@ -21,7 +21,7 @@ import parklist from '../components/ParkList.vue'
 import axios from 'axios'
 
 export default {
-  name: 'Map',
+  name: 'PlaygroundMap',
   components: { bannerTop, navbar, parklist },//tag name of new and used component
   props: {
     parkAddress: String,
@@ -31,6 +31,7 @@ export default {
       loading: true,
       parks: null,
       errored: false,
+      parkAddress: 'hihihi',
       parkUrls: [
         { id: 0, }
       ]
@@ -83,7 +84,7 @@ export default {
             let txt = address.replace(/"/g,""); //global replace
             let txt2 = txt.replace("{address: ","");
             let txt3 = txt2.split(",");
-            // console.log(txt3[0]);
+            console.log(txt3[0]);
             return txt3[0]; //variable is scoped to only this function
           }
           getAddress();
