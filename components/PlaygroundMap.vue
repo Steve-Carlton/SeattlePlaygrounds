@@ -1,28 +1,14 @@
 <template>
-  <main>
-    <bannerTop></bannerTop>
-    <navbar></navbar>
     <div id="mapid"></div>
-    <section class="parkList">
-      <header class="parkList__header">Park List</header>
-      <article class="cardContainer">
-        <parklist v-if="parks" v-for="park of parks" :key="park.id" :park="park">
-        </parklist>
-      </article>
-    </section>
-  </main>
 </template>
 
 <script>
 //import components
-import bannerTop from '../components/BannerTop.vue'
-import navbar from '../components/Navbar.vue'
-import parklist from '../components/ParkList.vue'
 import axios from 'axios'
 
 export default {
-  name: 'PlaygroundMap',
-  components: { bannerTop, navbar, parklist },//tag name of new and used component
+  name: 'playgroundMap',
+  components: { },//tag name of new and used component
   props: {
     parkAddress: String,
   },
@@ -31,7 +17,6 @@ export default {
       loading: true,
       parks: null,
       errored: false,
-      parkAddress: 'hihihi',
       parkUrls: [
         { id: 0, }
       ]

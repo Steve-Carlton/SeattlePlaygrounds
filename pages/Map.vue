@@ -2,12 +2,11 @@
   <main>
     <bannerTop></bannerTop>
     <navbar></navbar>
-    <div id="mapid"></div>
+    <playgroundMap></playgroundMap>
     <section class="parkList">
       <header class="parkList__header">Park List</header>
       <article class="cardContainer">
-        <parklist v-if="parks" v-for="park of parks" :key="park.id" :park="park">
-        </parklist>
+        <parklist v-if="parks" v-for="park of parks" :key="park.id" :park="park"></parklist>
       </article>
     </section>
   </main>
@@ -17,15 +16,14 @@
 //import components
 import bannerTop from '../components/BannerTop.vue'
 import navbar from '../components/Navbar.vue'
+import playgroundMap from '../components/playgroundMap.vue'
 import parklist from '../components/ParkList.vue'
 import axios from 'axios'
 
 export default {
   name: 'Map',
-  components: { bannerTop, navbar, parklist },//tag name of new and used component
-  props: {
-    parkAddress: String,
-  },
+  components: { bannerTop, navbar, playgroundMap, parklist },//tag name of new and used component
+
   data() {
     return {
       loading: true,
@@ -83,7 +81,7 @@ export default {
             let txt = address.replace(/"/g,""); //global replace
             let txt2 = txt.replace("{address: ","");
             let txt3 = txt2.split(",");
-            // console.log(txt3[0]);
+            console.log(txt3[0]);
             return txt3[0]; //variable is scoped to only this function
           }
           getAddress();
@@ -104,19 +102,20 @@ export default {
     .finally(() => this.loading = false)
 
 //####----LEAFLET.JS MAP----####
-    var mymap = L.map('mapid').setView([47.62051, -122.34930], 12);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1Ijoic3RjYXJsdG9uIiwiYSI6ImNrbjY5dHoyaTAxaXYycG8wZWF2azJxN2QifQ.zOTxW9CuYgd41kecUhOtVA'
-    }).addTo(mymap);
-
-  }
+  //   var mymap = L.map('mapid').setView([47.62051, -122.34930], 12);
+  //   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+  //   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  //   maxZoom: 18,
+  //   id: 'mapbox/streets-v11',
+  //   tileSize: 512,
+  //   zoomOffset: -1,
+  //   accessToken: 'pk.eyJ1Ijoic3RjYXJsdG9uIiwiYSI6ImNrbjY5dHoyaTAxaXYycG8wZWF2azJxN2QifQ.zOTxW9CuYgd41kecUhOtVA'
+  //   }).addTo(mymap);
+  //
+  // }
 
   // ###### methods: {}
+  }
 }
 </script>
 
