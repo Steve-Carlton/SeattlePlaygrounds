@@ -59,28 +59,21 @@ export default {
         marker.bindPopup(sortParks[i].name);
         }
 
-
-        if (sortParks[i].location_1 === undefined) {
-          continue;
-        } else {
-          //***GET PARK ADDRESS***
-          const getAddress = function() {
-            let address = sortParks[i].location_1.human_address;
-            let txt = address.replace(/"/g,""); //global replace
-            let txt2 = txt.replace("{address: ","");
-            let txt3 = txt2.split(",");
-            // console.log(txt3[0]);
-            return txt3[0]; //variable is scoped to only this function
-          }
-          getAddress();
-
-        //***ABOVE FUNCTION getAddress WORKS. CANNOT CONNECT OUTPUT TO HTML ELEMENT IN ParkList.vue***
-
-        //   let busted = document.getElementById('parkAddress').text("TEST");
-        //   console.log("getAddress has run")
-        //   // console.log(getAddress());
+        //   //***GET PARK ADDRESS***
+        // if (sortParks[i].location_1 === undefined) {
+        //   continue;
+        // } else {
+        //   const getAddress = function() {
+        //     let address = sortParks[i].location_1.human_address;
+        //     let txt = address.replace(/"/g,""); //global replace
+        //     let txt2 = txt.replace("{address: ","");
+        //     let txt3 = txt2.split(",");
+        //     // console.log(txt3[0]);
+        //     return txt3[0]; //variable is scoped to only this function
+        //   }
+        //   getAddress();
         // }
-        }
+        //***ABOVE FUNCTION getAddress WORKS. CANNOT CONNECT OUTPUT TO HTML ELEMENT IN ParkList.vue***
       }
     })
     .catch(error => {
