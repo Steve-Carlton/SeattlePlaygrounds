@@ -67,7 +67,7 @@ export default {
         if (sortParks[i].xpos === undefined) {
           continue; // Jumps to expression: i++
       } else {
-        let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos], {icon: flagMapIcon}).addTo(mymap);
+        // let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos], {icon: flagMapIcon}).addTo(mymap);
         marker.bindPopup(sortParks[i].name);
         }
 
@@ -81,7 +81,7 @@ export default {
             let txt = address.replace(/"/g,""); //global replace
             let txt2 = txt.replace("{address: ","");
             let txt3 = txt2.split(",");
-            console.log(txt3[0]);
+            // console.log(txt3[0]);
             return txt3[0]; //variable is scoped to only this function
           }
           getAddress();

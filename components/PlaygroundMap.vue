@@ -55,7 +55,7 @@ export default {
         if (sortParks[i].xpos === undefined) {
           continue; // Jumps to expression: i++
       } else {
-        let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos], {icon: flagMapIcon}).addTo(mymap);
+        let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos], {icon: flagMapIcon}).addTo(myMap);
         marker.bindPopup(sortParks[i].name);
         }
 
@@ -69,7 +69,7 @@ export default {
             let txt = address.replace(/"/g,""); //global replace
             let txt2 = txt.replace("{address: ","");
             let txt3 = txt2.split(",");
-            console.log(txt3[0]);
+            // console.log(txt3[0]);
             return txt3[0]; //variable is scoped to only this function
           }
           getAddress();
@@ -90,7 +90,7 @@ export default {
     .finally(() => this.loading = false)
 
 //####----LEAFLET.JS MAP----####
-    var mymap = L.map('mapid').setView([47.62051, -122.34930], 12);
+    var myMap = L.map('mapid').setView([47.62051, -122.34930], 12);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -98,7 +98,7 @@ export default {
     tileSize: 512,
     zoomOffset: -1,
     accessToken: 'pk.eyJ1Ijoic3RjYXJsdG9uIiwiYSI6ImNrbjY5dHoyaTAxaXYycG8wZWF2azJxN2QifQ.zOTxW9CuYgd41kecUhOtVA'
-    }).addTo(mymap);
+  }).addTo(myMap);
 
   }
 
