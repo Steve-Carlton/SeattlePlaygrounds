@@ -31,7 +31,8 @@ export default {
       errored: false,
       parkUrls: [
         { id: 0, }
-      ]
+      ],
+      parkAddress: []
     }
   },
   //####GET AND SORT API DATA####
@@ -61,58 +62,35 @@ export default {
       let sortParks = response.data.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
 
       (this.parks = sortParks)
-      //####----LEAFLET.JS MAP MARKERS----####
-      //#### Screens out undefined data in the API, then iterates map markers####
+
+
+      //***GET PARK ADDRESS***
+      let addToParkAddress = [];
       for (let i = 0; i < sortParks.length; i++) {
-        if (sortParks[i].xpos === undefined) {
-          continue; // Jumps to expression: i++
-      } else {
-        // let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos], {icon: flagMapIcon}).addTo(mymap);
-        marker.bindPopup(sortParks[i].name);
-        }
-
-
         if (sortParks[i].location_1 === undefined) {
           continue;
         } else {
-          //***GET PARK ADDRESS***
+
           const getAddress = function() {
             let address = sortParks[i].location_1.human_address;
             let txt = address.replace(/"/g,""); //global replace
             let txt2 = txt.replace("{address: ","");
             let txt3 = txt2.split(",");
-            // console.log(txt3[0]);
-            return txt3[0]; //variable is scoped to only this function
+            addToParkAddress.push(txt3[0]);
           }
           getAddress();
-
+          // console.log(txt3[0]);
         //***ABOVE FUNCTION getAddress WORKS. CANNOT CONNECT OUTPUT TO HTML ELEMENT IN ParkList.vue***
-
-        //   let busted = document.getElementById('parkAddress').text("TEST");
-        //   console.log("getAddress has run")
-        //   // console.log(getAddress());
-        // }
         }
       }
+      console.log(addToParkAddress);
+      (this.parkAddress = addToParkAddress)
     })
     .catch(error => {
       console.log(error)
       this.errored = true
     })
     .finally(() => this.loading = false)
-
-//####----LEAFLET.JS MAP----####
-  //   var mymap = L.map('mapid').setView([47.62051, -122.34930], 12);
-  //   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-  //   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-  //   maxZoom: 18,
-  //   id: 'mapbox/streets-v11',
-  //   tileSize: 512,
-  //   zoomOffset: -1,
-  //   accessToken: 'pk.eyJ1Ijoic3RjYXJsdG9uIiwiYSI6ImNrbjY5dHoyaTAxaXYycG8wZWF2azJxN2QifQ.zOTxW9CuYgd41kecUhOtVA'
-  //   }).addTo(mymap);
-  //
-  // }
 
   // ###### methods: {}
   }

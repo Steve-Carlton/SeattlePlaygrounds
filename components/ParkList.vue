@@ -5,7 +5,7 @@
       <h6>Park Hours: {{ park.hours }} </h6>
       <!-- <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p> -->
       <!-- <p id="parkAddress">Address: {{park.location_1}}</p> -->
-      <!-- <p id="parkAddress">Address: {{parkAddress}}</p> -->
+      <p>Address: {{ park.parkAddress }}</p>
       <p>{{ park.feature_desc }}</p>
 
     </article>
@@ -19,7 +19,8 @@ import {getAddress} from "../middleware/getAddress.js"
 export default {
   name: 'parklist',
 	props: {
-		park: Object
+		park: Object,
+    parkAddress: Array
 	},
   mixins: [getAddress]
 }
