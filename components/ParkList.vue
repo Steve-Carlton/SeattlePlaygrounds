@@ -5,7 +5,12 @@
       <h6>Park Hours: {{ park.hours }} </h6>
       <!-- <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p> -->
       <!-- <p id="parkAddress">Address: {{park.location_1}}</p> -->
-      <p>Address: {{ park.parkAddress }}</p>
+      <parkAddresses
+        :msg="msg"
+        :key="msg.id"
+      >
+
+      </parkAddresses>
       <p>{{ park.feature_desc }}</p>
 
     </article>
@@ -14,14 +19,19 @@
 
 <script>
 import {getAddress} from "../middleware/getAddress.js"
-
+import parkAddresses from "../components/ParkAddresses.vue"
 
 export default {
   name: 'parklist',
+  components: { parkAddresses },
 	props: {
 		park: Object,
-    parkAddress: Array
 	},
+  data() {
+    return {
+      msg: "howdy"
+    }
+  },
   mixins: [getAddress]
 }
 
