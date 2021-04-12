@@ -1,6 +1,6 @@
 <template>
   <!-- <p>Address: {{ parkAddresses.parkAddress }}</p> -->
-  <p>Address: {{ msg }}</p>
+  <p>Address: {{ streetAddress }}</p>
 </template>
 
 <script>
@@ -10,10 +10,13 @@
 export default {
   name: 'parkAddresses',
 	props: {
-    msg: String,
+    streetAddress: String,
     parkAddress: Array
 	},
-  // mixins: [getAddress]
+data() {
+  return {
+  }
+}
 }
 
 </script>
