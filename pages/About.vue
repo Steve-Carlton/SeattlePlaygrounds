@@ -50,12 +50,13 @@ export default {
 main {
   background: rgba(32,32,255,1);
   background: linear-gradient(315deg, rgba(174,62,245,1) 10%, rgba(32,32,255,1) 50%, rgba(71,148,255,1) 100%);
+  min-height: 100vh;
 }
 
 h2 {
   color: white;
   margin: 1rem;
-  background-color: teal;
+  background-color: rgba(0, 195, 168, 0.6);
   padding: 1rem;
   border-radius: 8px;
   font-weight: bold;
@@ -63,16 +64,10 @@ h2 {
 
 .about{
   &__aboutContainer {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // grid-column-gap: 5%;
-    // grid-row-gap: 3rem;
     margin: 2rem 5% 0rem;
     padding-bottom: 10rem;
-    // grid-row-gap: 2rem;
   }
 }
-
   .aboutImageContainer {
     margin-top: .5rem;
     display: grid;
@@ -87,4 +82,5 @@ h2 {
     justify-content: center;
   }
 }
+
 </style>

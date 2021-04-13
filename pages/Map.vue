@@ -66,7 +66,7 @@ export default {
 
       //***GET PARK ADDRESS***
       let addToParkAddress = [];
-      let txt3;
+      // let txt3;
       for (let i = 0; i < sortParks.length; i++) {
         if (sortParks[i].location_1 === undefined) {
           continue;
@@ -75,12 +75,12 @@ export default {
             let address = sortParks[i].location_1.human_address;
             let txt = address.replace(/"/g,""); //global replace
             let txt2 = txt.replace("{address: ","");
-             txt3 = txt2.split(",");
+            let txt3 = txt2.split(",");
             addToParkAddress.push(txt3[0]);
             return addToParkAddress;
           }
           getAddress();
-          console.log(txt3[0]); // log each street address
+          // console.log(txt3[0]); // log each street address
         //***ABOVE FUNCTION getAddress WORKS. CANNOT CONNECT OUTPUT TO HTML ELEMENT IN ParkList.vue***
         }
       }

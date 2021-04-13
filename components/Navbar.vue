@@ -3,20 +3,15 @@
     <!-- NAVBAR -->
     <nav class="nav">
       <ul class="nav nav-pills">
-        <li class="nav-item"><nuxt-link id="homeIcon" to="/" data-toggle="tooltip" data-placement="bottom" title="Landing Page">index</nuxt-link></li>
-        <li class="nav-item">
-          <!-- use router-link for link to other views -->
-          <NuxtLink to="/" class="nav-link">Landing</NuxtLink>
-        </li>
+        <li class="nav-item"><nuxt-link id="homeIcon" to="/" data-toggle="tooltip" data-placement="bottom" title="Home"><img src="/home_outline_icon.png" alt="Home">
+        </nuxt-link></li>
+        <!-- use router-link for link to other views -->
         <!-- "to" value is not a file path. it's a route. see index.js-->
         <li class="nav-item">
           <NuxtLink to="/map" class="nav-link">Map</NuxtLink>
         </li>
         <li class="nav-item">
           <NuxtLink to="/about" class="nav-link">About</NuxtLink>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">social</a>
         </li>
         <li class="nav-item">
           <button class="btn btn-info nav-link" type="button" @click="toggle" data-placement="bottom" title="Click to Show/Hide">
@@ -82,15 +77,18 @@ export default {
 
 #homeIcon {
   cursor: pointer;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #00c3a899;
-  border-radius: 50%;
   width: 3rem;
   height: 3rem;
   border: none;
+  background: none;
+}
+#homeIcon img {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 @media only screen and (max-width: 474px) {

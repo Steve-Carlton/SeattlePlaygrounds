@@ -48,11 +48,12 @@ export default {
   background-color: #572e8a;
 }
 .content {
-  text-align: left;
+  color: #fff;
+  text-align: center;
   margin: 0 1rem;
   padding: .5rem 1rem;
   width: 94%;
-  background-color: #f2f2f2;
+  background-color: #f2f2f250;
   border-radius: 0 0 8px 8px;
 
 }
