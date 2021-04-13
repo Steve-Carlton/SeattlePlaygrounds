@@ -9,11 +9,11 @@
       <aboutAccordion></aboutAccordion>
     </section>
     <!-- ##### IMAGE CONTAINER ##### -->
-    <section class="aboutImageContainer">
+    <!-- <section class="aboutImageContainer">
       <imageContainer v-for="item in imageArray"
         v-bind:imageprop="item"
         v-bind:key="item.id">
-      </imageContainer>
+      </imageContainer> -->
     </section>
 
   </section>
@@ -23,18 +23,18 @@
 //import components
 import bannerTop from '../components/BannerTop.vue'
 import navbar from '../components/Navbar.vue'
-import imageContainer from '../components/ImageContainer.vue'
+// import imageContainer from '../components/ImageContainer.vue'
 import aboutAccordion from '../components/AboutAccordion.vue'
 
 export default {
-  components: { bannerTop, navbar, imageContainer, aboutAccordion },//filename of new and used component
+  components: { bannerTop, navbar, aboutAccordion },//filename of new and used component
   data() {
     return {
-      imageArray: [
-        { id: 0, imageSrc: "https://picsum.photos/500/300", imageAlt: "placeholder image1" },
-        { id: 1, imageSrc: "https://picsum.photos/499/300", imageAlt: 'placeholder image2' },
-        { id: 2, imageSrc: 'https://picsum.photos/501/300', imageAlt: 'placeholder image3', }
-      ]
+      // imageArray: [
+      //   { id: 0, imageSrc: "https://picsum.photos/500/300", imageAlt: "placeholder image1" },
+      //   { id: 1, imageSrc: "https://picsum.photos/499/300", imageAlt: 'placeholder image2' },
+      //   { id: 2, imageSrc: 'https://picsum.photos/501/300', imageAlt: 'placeholder image3', }
+      // ]
     }
   }
   // methods: {
@@ -63,12 +63,13 @@ h2 {
 
 .about{
   &__aboutContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 5%;
-    grid-row-gap: 3rem;
-    margin: 2rem 5%;
-    grid-row-gap: 2rem;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-column-gap: 5%;
+    // grid-row-gap: 3rem;
+    margin: 2rem 5% 0rem;
+    padding-bottom: 10rem;
+    // grid-row-gap: 2rem;
   }
 }
 
