@@ -1,6 +1,6 @@
 <template>
   <!-- <p>Address: {{ parkAddresses.parkAddress }}</p> -->
-  <p>Address: {{ streetAddress }}</p>
+  <p>Address: {{ streetAddress.parkAddress }}</p>
 </template>
 
 <script>
@@ -10,8 +10,8 @@
 export default {
   name: 'parkAddresses',
 	props: {
-    streetAddress: String,
-    parkAddress: Array
+    // streetAddress: String,
+    // parkAddress: Array
 	},
 data() {
   return {
