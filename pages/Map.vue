@@ -5,6 +5,9 @@
     <playgroundMap></playgroundMap>
     <section class="parkList">
       <header class="parkList__header">Park List</header>
+      <div class="test">
+        <p>{{ parkAddress }}</p><!-- does not render inside parklist element -->
+      </div>
       <article class="cardContainer">
         <parklist v-if="parks" v-for="park of parks" :key="park.id" :park="park"></parklist>
       </article>
@@ -18,6 +21,7 @@ import bannerTop from '../components/BannerTop.vue'
 import navbar from '../components/Navbar.vue'
 import playgroundMap from '../components/playgroundMap.vue'
 import parklist from '../components/ParkList.vue'
+// import parkAddresses from '../components/parkAddresses.vue'
 import axios from 'axios'
 
 export default {
@@ -29,10 +33,6 @@ export default {
       loading: true,
       parks: null,
       errored: false,
-      parkUrls: [
-        { id: 0, }
-      ],
-      parkAddress: []
     }
   },
   //####GET AND SORT API DATA####
@@ -70,20 +70,20 @@ export default {
         if (sortParks[i].location_1 === undefined) {
           continue;
         } else {
-
-          const getAddress = function() {
+           getAddress = function() {
             let address = sortParks[i].location_1.human_address;
             let txt = address.replace(/"/g,""); //global replace
             let txt2 = txt.replace("{address: ","");
             let txt3 = txt2.split(",");
             addToParkAddress.push(txt3[0]);
+            return addToParkAddress;
           }
           getAddress();
-          // console.log(txt3[0]);
+          // console.log(txt3[0]); // log each street address
         //***ABOVE FUNCTION getAddress WORKS. CANNOT CONNECT OUTPUT TO HTML ELEMENT IN ParkList.vue***
         }
       }
-      console.log(addToParkAddress);
+      // console.log(getAddress());//log an array of all street addresses
       (this.parkAddress = addToParkAddress)
     })
     .catch(error => {
@@ -95,6 +95,7 @@ export default {
   // ###### methods: {}
   }
 }
+let getAddress = function() {}
 </script>
 
 <style scoped lang="scss">
