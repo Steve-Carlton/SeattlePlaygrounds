@@ -4,8 +4,8 @@
       <h5 class="tiles__title">{{ park.name }}</h5>
       <h6>Park Hours: {{ park.hours }} </h6>
       <!-- <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p> -->
-      <!-- <p id="streetAddress">Address: {{park.location_1}}</p> -->
-      <p id="parkAddress">Address: {{ computedStreetAddress }}</p>
+      <p id="streetAddress">Address: {{park.location_1}}</p>
+      <!-- <p id="parkAddress">Address: {{ computedStreetAddress }}</p> -->
       <!-- <parkAddresses v-for="item in posts"
         v-bind:streetAddress="item.text"
   v-bind:key="item.id">
