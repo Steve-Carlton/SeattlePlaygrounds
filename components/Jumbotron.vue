@@ -30,11 +30,9 @@ export default {
   .jumbotron {
     margin-bottom: 2rem;
     padding: 3rem 2rem 3rem 4rem;
-    border-right: 22px solid rgba(100, 0, 194, 0.25);
-    border-bottom: 10px solid rgba(74, 0, 194, 1);
-    background: #f2f2f299;
+    background: #f2f2f250;
     color: white;
-    border-radius: 2rem 0 0 0;
+    border-radius: 2rem;
   }
 
   h2 {

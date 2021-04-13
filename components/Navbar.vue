@@ -111,8 +111,8 @@ export default {
   padding-bottom: 0;
   & .show {
     display: block;
-    background: rgba(174,62,245,.5);
-    background: linear-gradient(343deg, rgba(174,62,245,.5) 35%, rgba(40,40,255,.5) 100%);
+    background: rgba(122,122,255,1);
+    background: linear-gradient(343deg, rgba(102,102,255,1) 35%, rgba(153,153,255,1) 100%);
     border: none;
     border-radius: 2rem;
   }
