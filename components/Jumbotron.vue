@@ -5,7 +5,7 @@
     <!-- if jumboGraphics array item present, render on page -->
     <div v-if="jumboProp.jumboGraphics" class="CTAcontainer">
       <a href="https://www.twitter.com/" target="blank"><img class="twitterCTA" src="../assets/img/twitter-bird.png" alt="www.twitter.com"></a>
-      <a class="button" href="https://www.twitter.com" target="_blank">{{jumboProp.jumboGraphics}}</a>
+      <a class="button" href="https://www.twitter.com/" target="_blank">{{jumboProp.jumboGraphics}}</a>
     </div>
     <p>{{ jumboProp.jumboCopy }}</p>
     <!-- if jumboButton array item present, render on page -->

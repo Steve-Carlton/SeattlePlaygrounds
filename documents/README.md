@@ -20,3 +20,5 @@ SEO is a group of practices that may help your website get in front of more user
 • Results can be measured using KPI tools.
 
 As SEO relates to my project, I would want to reevaluate the usage and contents of my heading tags. I would expand the options for and increase the number of social tags. And I would create more external links on the about page to other relevant resources.
+
+Add a social page that links or embeds relevant social media accounts.

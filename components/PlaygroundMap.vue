@@ -56,6 +56,7 @@ export default {
           continue; // Jumps to expression: i++
       } else {
         let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos], {icon: flagMapIcon}).addTo(myMap);
+        //MARKER POPUP
         marker.bindPopup(sortParks[i].name);
         }
 
