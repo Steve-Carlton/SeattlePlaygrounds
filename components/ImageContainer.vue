@@ -9,10 +9,10 @@
 import {toggle} from "../middleware/toggle.js";
 
 export default {
-  name: 'imageContainer',//name of file, component, html tag
+  name: 'ImageContainer',//name of file, component, html tag
   props: {
     //prop is an object. it is attached to the array item in ...Array with a v-bind.
-    imageprop: Object,
+    imageProp: Object,
     imageSrc: String,
     imageAlt: String,
 

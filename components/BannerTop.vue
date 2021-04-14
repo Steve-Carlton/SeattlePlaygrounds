@@ -12,9 +12,8 @@
 <script>
 
 export default {
-  name: 'bannerTop',//name of file, component, html tag
+  name: 'BannerTop',//name of file, component, html tag
   props: {
-    brandTitle: String
     //my prop name : data type
     // can also list names
     // try an array

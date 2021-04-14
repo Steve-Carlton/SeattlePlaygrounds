@@ -7,7 +7,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'playgroundMap',
+  name: 'PlaygroundMap',
   components: { },//tag name of new and used component
   props: {
     parkAddress: String,

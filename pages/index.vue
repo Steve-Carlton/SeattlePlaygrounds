@@ -1,9 +1,9 @@
 <template>
   <main>
-    <bannerTop></bannerTop>
+    <banner-top></banner-top>
       <!-- Loops through jumbotronArray array of objects. creates a prop to attach array items to (jumboprop). supply a key for vue. -->
     <jumbotron v-for="item in jumbotronArray"
-      v-bind:jumboprop="item"
+      v-bind:jumboProp="item"
       v-bind:key="item.id">
     </jumbotron>
   </main>
@@ -11,12 +11,12 @@
 
 <script>
 //import components. file path is relative to vue router js.
-import bannerTop from '../components/BannerTop.vue'
-import jumbotron from '../components/Jumbotron.vue'
+import BannerTop from '../components/BannerTop.vue'
+import Jumbotron from '../components/Jumbotron.vue'
 
 export default {
-  name: 'Landing',
-  components: { bannerTop, jumbotron },
+  name: 'index',
+  components: { BannerTop, Jumbotron },
   data() {
     return {
       jumbotronArray: [//this is an array of objects

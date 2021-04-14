@@ -1,26 +1,26 @@
 <template>
   <section class="jumbotron">
-    <h2>{{jumboprop.jumboTagline}}</h2>
-    <h3 class="lead">{{jumboprop.jumboSubTag}}</h3>
+    <h2>{{jumboProp.jumboTagline}}</h2>
+    <h3 class="lead">{{jumboProp.jumboSubTag}}</h3>
     <!-- if jumboGraphics array item present, render on page -->
-    <div v-if="jumboprop.jumboGraphics" class="CTAcontainer">
+    <div v-if="jumboProp.jumboGraphics" class="CTAcontainer">
       <a href="https://www.twitter.com/" target="blank"><img class="twitterCTA" src="../assets/img/twitter-bird.png" alt="www.twitter.com"></a>
-      <a class="button" href="https://www.twitter.com" target="_blank">{{jumboprop.jumboGraphics}}</a>
+      <a class="button" href="https://www.twitter.com" target="_blank">{{jumboProp.jumboGraphics}}</a>
     </div>
-    <p>{{ jumboprop.jumboCopy }}</p>
+    <p>{{ jumboProp.jumboCopy }}</p>
     <!-- if jumboButton array item present, render on page -->
     <!-- use router-link for link to other views -->
-    <div class="jumboButton-container"><router-link class="jumboButton" v-if="jumboprop.jumboButton" to="/map">{{ jumboprop.jumboButton }}</router-link></div>
+    <div class="jumboButton-container"><nuxt-link class="jumboButton" v-if="jumboProp.jumboButton" to="/map">{{ jumboProp.jumboButton }}</nuxt-link></div>
   </section>
 </template>
 
 <script>
 
 export default {
-  name: 'jumbotron',//name of file, component, html tag
+  name: 'Jumbotron',//name of file, component, html tag
   props: {
     //jumboprop is an object. it is attached to the array item in jumbotronArray with a v-bind.
-    jumboprop: Object,
+    jumboProp: Object,
     //my prop name : data type
   }
 }

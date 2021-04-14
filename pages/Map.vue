@@ -1,15 +1,15 @@
 <template>
   <main>
-    <bannerTop></bannerTop>
+    <banner-top></banner-top>
     <navbar></navbar>
-    <playgroundMap></playgroundMap>
+    <playground-map></playground-map>
     <section class="parkList">
       <header class="parkList__header">Park List</header>
       <div class="test">
         <p>{{ parkAddress }}</p><!-- does not render inside parklist element -->
       </div>
       <article class="cardContainer">
-        <parklist v-if="parks" v-for="park of parks" :key="park.id" :park="park"></parklist>
+        <park-list v-if="parks" v-for="park of parks" :key="park.id" :park="park"></park-list>
       </article>
     </section>
   </main>
@@ -17,16 +17,16 @@
 
 <script>
 //import components
-import bannerTop from '../components/BannerTop.vue'
-import navbar from '../components/Navbar.vue'
-import playgroundMap from '../components/playgroundMap.vue'
-import parklist from '../components/ParkList.vue'
+import BannerTop from '../components/BannerTop.vue'
+import Navbar from '../components/Navbar.vue'
+import PlaygroundMap from '../components/PlaygroundMap.vue'
+import ParkList from '../components/ParkList.vue'
 // import parkAddresses from '../components/parkAddresses.vue'
 import axios from 'axios'
 
 export default {
   name: 'Map',
-  components: { bannerTop, navbar, playgroundMap, parklist },//tag name of new and used component
+  components: { BannerTop, Navbar, PlaygroundMap, ParkList },//tag name of new and used component
 
   data() {
     return {

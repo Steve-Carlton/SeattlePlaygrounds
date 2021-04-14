@@ -2,19 +2,19 @@
   <div>
     <!-- ACCORDION -->
     <div v-for="accordion in accordionArray" :key="accordion.title">
-      <baseAccordian>
+      <base-accordian>
         <template v-slot:title>{{ accordion.title }}</template>
         <template v-slot:content>
           <img :src="accordion.image" class='img-fluid' alt='Responsive image'>
           <p>{{ accordion.copy }}</p>
         </template>
-      </baseAccordian>
+      </base-accordian>
     </div>
   </div>
 </template>
 
 <script>
-import baseAccordian from "./BaseAccordion.vue"
+import BaseAccordian from "./BaseAccordion.vue"
 
 // ##### ACCORDION IMAGES #####
 import image1 from "../assets/img/pi-cuatropuntocero-DIhUtRCBsWA-unsplash.jpg"
@@ -22,8 +22,8 @@ import image2 from "../assets/img/alex-mertz-Hf0VFk1kCUQ-unsplash.jpg"
 import image3 from "../assets/img/sheri-hooley-ME5X18xabmc-unsplash.jpg"
 
 export default {
-  components: { baseAccordian },
-  name: 'aboutAccordion',//name of file, component, html tag
+  components: { BaseAccordian },
+  name: 'AboutAccordion',//name of file, component, html tag
 data() {
   return {
       accordionArray: [

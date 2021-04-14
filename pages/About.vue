@@ -1,19 +1,19 @@
 <template>
 <main class="about">
-  <bannerTop></bannerTop>
+  <banner-top></banner-top>
   <navbar></navbar>
   <h2>What would you like to know?</h2>
   <section class="about__aboutContainer">
     <!-- ##### ACCORDION ##### -->
     <section class="aboutCopy">
-      <aboutAccordion></aboutAccordion>
+      <about-accordion></about-accordion>
     </section>
     <!-- ##### IMAGE CONTAINER ##### -->
     <!-- <section class="aboutImageContainer">
-      <imageContainer v-for="item in imageArray"
-        v-bind:imageprop="item"
+      <image-container v-for="item in imageArray"
+        v-bind:imageProp="item"
         v-bind:key="item.id">
-      </imageContainer> -->
+      </image-container> -->
     </section>
 
   </section>
@@ -21,13 +21,13 @@
 </template>
 <script>
 //import components
-import bannerTop from '../components/BannerTop.vue'
-import navbar from '../components/Navbar.vue'
-// import imageContainer from '../components/ImageContainer.vue'
-import aboutAccordion from '../components/AboutAccordion.vue'
+import BannerTop from '../components/BannerTop.vue'
+import Navbar from '../components/Navbar.vue'
+// import image-container from '../components/ImageContainer.vue'
+import AboutAccordion from '../components/AboutAccordion.vue'
 
 export default {
-  components: { bannerTop, navbar, aboutAccordion },//filename of new and used component
+  components: { BannerTop, Navbar, AboutAccordion },//filename of new and used component
   data() {
     return {
       // imageArray: [

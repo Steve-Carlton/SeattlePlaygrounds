@@ -8,10 +8,10 @@
         <!-- use router-link for link to other views -->
         <!-- "to" value is not a file path. it's a route. see index.js-->
         <li class="nav-item">
-          <NuxtLink to="/map" class="nav-link">Map</NuxtLink>
+          <nuxt-link to="/map" class="nav-link">Map</nuxt-link>
         </li>
         <li class="nav-item">
-          <NuxtLink to="/about" class="nav-link">About</NuxtLink>
+          <nuxt-link to="/about" class="nav-link">About</nuxt-link>
         </li>
         <li class="nav-item">
           <button class="btn btn-info nav-link" type="button" @click="toggle" data-placement="bottom" title="Click to Show/Hide">
@@ -22,7 +22,7 @@
     </nav>
       <!-- jumbotron through jumbotronArray array of objects. creates a prop to attach array items to (jumboprop). supply a key for vue. -->
     <jumbotron class="jumbotron" :class="show ? 'hide' : 'show'" v-for="item in jumbotronArray"
-      v-bind:jumboprop="item"
+      v-bind:jumboProp="item"
       v-bind:key="item.id">
     </jumbotron>
   </section>
@@ -32,12 +32,12 @@
 // ###### Link to Component File ######
 // import filename and path
 //import components. file path is relative to vue router js.
-import jumbotron from './Jumbotron.vue';
+import Jumbotron from './Jumbotron.vue';
 import {toggle} from "../middleware/toggle.js";
 
 export default {
-  name: 'navbar',//name of file, component, html tag
-  components: { jumbotron },
+  name: 'Navbar',//name of file, component, html tag
+  components: { Jumbotron },
   mixins: [toggle],
 
   data() {

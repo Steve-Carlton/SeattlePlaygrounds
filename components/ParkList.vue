@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import {getAddress} from "../middleware/getAddress.js"
+import { getAddress } from "../middleware/getAddress.js"
 // import parkAddresses from "./ParkAddresses.vue"
 
 export default {
-  name: 'parklist',
+  name: 'ParkList',
   components: { },
 	props: {
 		park: Object,
