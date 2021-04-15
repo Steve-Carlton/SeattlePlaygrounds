@@ -4,7 +4,7 @@
       <div class="header__container__logo">
         <img src="../assets/img/FlagIcon01v1.png" alt="Red Flag Logo">
       </div>
-      <h1 class="header__container__brandTitle"><div class="firstLetter">S</div>eattle <div class="firstLetter">P</div>laygrounds</h1>
+      <h1 class="header__container__brandTitle"><span class="firstLetter">S</span>eattle <span class="firstLetter">P</span>laygrounds</h1>
     </div>
   </header>
 </template>

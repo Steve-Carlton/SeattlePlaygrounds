@@ -19,8 +19,6 @@ export default {
 	},
   data: function () {
     return {
-      onmouseover: true,
-
     }
   },
   methods: {

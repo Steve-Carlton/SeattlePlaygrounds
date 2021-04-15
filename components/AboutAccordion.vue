@@ -39,7 +39,6 @@ data() {
   },
   methods: {
     getImg: function() {
-      console.log("getImg function has run")
       return '../assets/img/alex-mertz-Hf0VFk1kCUQ-unsplash.jpg';
     }
   }
