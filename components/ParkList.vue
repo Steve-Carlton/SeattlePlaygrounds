@@ -2,16 +2,11 @@
   <section>
     <article class="tiles">
       <h5 class="tiles__title">{{ park.name }}</h5>
+      <p id="streetAddress">Address: {{streetAddress(park.location_1)}}</p>
       <h6>Park Hours: {{ park.hours }} </h6>
-      <!-- <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p> -->
-      <p id="streetAddress">Address: {{computedStreetAddress(park.location_1)}}</p>
-      <!-- <p id="streetAddress">Address: {{park.cleanAddress}}</p> -->
-      <!-- <p id="parkAddress">Address: {{ computedStreetAddress }}</p> -->
-      <!-- <parkAddresses v-for="item in posts"
-        v-bind:streetAddress="item.text"
-  v-bind:key="item.id">
 
-      </parkAddresses> -->
+      <!-- <p>Address: {{park.cleanAddress}}</p> -->
+
       <p>{{ park.feature_desc }}</p>
 
     </article>
@@ -19,8 +14,6 @@
 </template>
 
 <script>
-import { getAddress } from "../middleware/getAddress.js"
-// import parkAddresses from "./ParkAddresses.vue"
 
 export default {
   name: 'ParkList',
@@ -30,32 +23,28 @@ export default {
 	},
   data: function () {
     return {
-    posts: [
-      { id: 0, text: '123 Banana St' },
-      { id: 1, text: '456 Main St.' },
-      { id: 2, text: '789 3rd St.' }
-    ]
+      onmouseover: true,
+
     }
   },
   methods: {
-   computedStreetAddress(x) {
-    let input = '{"latitude": "-122.407312", "longitude": "47.578497", "human_address": "{\"address\": \"5817 SW Lander St\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"}'; //this needs to be the data from response.data.location_1. doesn't recognize response.
+   streetAddress(x) {
     if (!x) {
       return ""
     }
     let obj=JSON.parse(x.human_address);
-    // console.log(obj.address);
     return obj.address
-    // let comp1 = input.replace(/"/g,"");
-    // let comp2 = comp1.split(":");
-    // let comp3 = comp2[4].split(",");
-    // let comp4 = comp3[0].replace(/'/g,"");
-    // let comp5 = comp4.trim();
-    // let comp6 = comp5.replace(/"/g, "");
-    // console.log(comp6);
-    // return comp6;
+  },
+// document.queryselector(".tiles").onmouseover = function() {highlightOn()};
+// document.queryselector(".tiles").onmouseoout = function() {highlightOff()};
+    highlight() {
+      let card = document.getElementsByClassName('tiles');
+
+      card.classList.toggle("highlight");
+      return
+   }
   }
-  }
+
 }
 
 </script>
@@ -73,5 +62,9 @@ export default {
   &__title {
     font-weight: bold;
   }
+}
+
+article:hover {
+  box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.5);
 }
 </style>

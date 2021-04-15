@@ -5,9 +5,6 @@
     <playground-map></playground-map>
     <section class="parkList">
       <header class="parkList__header">Park List</header>
-      <!-- <div class="test">
-        <p>{{ parkAddress }}</p>does not render inside parklist element 
-      </div> -->
       <article class="cardContainer">
         <park-list v-if="parks" v-for="park of parks" :key="park.id" :park="park"></park-list>
       </article>
@@ -21,7 +18,6 @@ import BannerTop from '../components/BannerTop.vue'
 import Navbar from '../components/Navbar.vue'
 import PlaygroundMap from '../components/PlaygroundMap.vue'
 import ParkList from '../components/ParkList.vue'
-// import parkAddresses from '../components/parkAddresses.vue'
 import axios from 'axios'
 
 export default {
@@ -40,7 +36,7 @@ export default {
   axios
     .get('https://data.seattle.gov/resource/2cer-njie.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1&$where=feature_desc="Play Area (ADA Compliant)" OR feature_desc="Play Area"')
 
-    //Edited Dataset
+    //Modified Dataset
     // .get('https://data.seattle.gov/resource/sfg9-akgs.json?$$app_token=JhK7gpKFEAw5to97NYoHSIYs1&$where=feature_desc="Play Area (ADA Compliant)" OR feature_desc="Play Area"')
 
     .then(response => {
@@ -49,7 +45,7 @@ export default {
 
     //****CUSTOM MAP ICON****
      let flagMapIcon = L.icon({
-       iconUrl:'/flagMapIcon.png', //works now that images were moved into static folder.
+       iconUrl:'/flagMapIcon.png', //images must be in static folder.
        shadowUrl: '/flagMapIconShadow.png',
        iconSize: [33, 49],
        shadowSize: [32, 20],
@@ -63,30 +59,6 @@ export default {
 
       (this.parks = sortParks)
 
-
-      //***GET PARK ADDRESS***
-      let addToParkAddress = [];
-      // let txt3;
-      for (let i = 0; i < sortParks.length; i++) {
-        if (sortParks[i].location_1 === undefined) {
-          continue;
-        } else {
-           getAddress = function() {
-            let address = sortParks[i].location_1.human_address;
-            let txt = address.replace(/"/g,""); //global replace
-            let txt2 = txt.replace("{address: ","");
-            let txt3 = txt2.split(",");
-            addToParkAddress.push(txt3[0]);
-            // this.parks[i].cleanAddress=txt3[0]//adds cleanAddress to the key/value pair
-            return addToParkAddress;
-          }
-          getAddress();
-          // console.log(txt3[0]); // log each street address
-        //***ABOVE FUNCTION getAddress WORKS. CANNOT CONNECT OUTPUT TO HTML ELEMENT IN ParkList.vue***
-        }
-      }
-      // console.log(getAddress());//log an array of all street addresses
-      (this.parkAddress = addToParkAddress)
     })
     .catch(error => {
       console.log(error)
@@ -97,7 +69,6 @@ export default {
   // ###### methods: {}
   }
 }
-let getAddress = function() {}
 </script>
 
 <style scoped lang="scss">
@@ -148,6 +119,7 @@ main {
   align-items: flex-start;
   text-align: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 
