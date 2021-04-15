@@ -42,8 +42,7 @@ export default {
        shadowSize: [32, 20],
        iconAnchor: [2, 48],
        shadowAnchor: [0, 20],
-       popupAnchor: [2, -40],
-       title: "hey-o"
+       popupAnchor: [2, -40]
      });
 
       //***SORT PARKS***Assigns response.data to sortParks. Applies array method .sort(), which takes the function with two parameters as written below.
@@ -60,7 +59,7 @@ export default {
         //####----MARKER POPUP----####
         // marker.bindPopup(sortParks[i].name); //original marker
 
-        marker.bindPopup(sortParks[i].name + "<br><b>text</b>");
+        marker.bindPopup(sortParks[i].name);
         }
 
         //   //***GET PARK ADDRESS***

@@ -4,11 +4,7 @@
       <h5 class="tiles__title">{{ park.name }}</h5>
       <p id="streetAddress">Address: {{streetAddress(park.location_1)}}</p>
       <h6>Park Hours: {{ park.hours }} </h6>
-
-      <!-- <p>Address: {{park.cleanAddress}}</p> -->
-
       <p>{{ park.feature_desc }}</p>
-
     </article>
   </section>
 </template>
@@ -34,15 +30,7 @@ export default {
     }
     let obj=JSON.parse(x.human_address);
     return obj.address
-  },
-// document.queryselector(".tiles").onmouseover = function() {highlightOn()};
-// document.queryselector(".tiles").onmouseoout = function() {highlightOff()};
-    highlight() {
-      let card = document.getElementsByClassName('tiles');
-
-      card.classList.toggle("highlight");
-      return
-   }
+    }
   }
 
 }
