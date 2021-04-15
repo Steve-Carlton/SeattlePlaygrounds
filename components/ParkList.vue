@@ -4,7 +4,8 @@
       <h5 class="tiles__title">{{ park.name }}</h5>
       <h6>Park Hours: {{ park.hours }} </h6>
       <!-- <p>Coordinates: {{ park.ypos }}, {{ park.xpos }}</p> -->
-      <p id="streetAddress">Address: {{park.location_1}}</p>
+      <p id="streetAddress">Address: {{computedStreetAddress(park.location_1)}}</p>
+      <!-- <p id="streetAddress">Address: {{park.cleanAddress}}</p> -->
       <!-- <p id="parkAddress">Address: {{ computedStreetAddress }}</p> -->
       <!-- <parkAddresses v-for="item in posts"
         v-bind:streetAddress="item.text"
@@ -36,17 +37,23 @@ export default {
     ]
     }
   },
-  computed: {
-   computedStreetAddress() {
+  methods: {
+   computedStreetAddress(x) {
     let input = '{"latitude": "-122.407312", "longitude": "47.578497", "human_address": "{\"address\": \"5817 SW Lander St\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"}'; //this needs to be the data from response.data.location_1. doesn't recognize response.
-    let comp1 = input.replace(/"/g,"");
-    let comp2 = comp1.split(":");
-    let comp3 = comp2[4].split(",");
-    let comp4 = comp3[0].replace(/'/g,"");
-    let comp5 = comp4.trim();
-    let comp6 = comp5.replace(/"/g, "");
+    if (!x) {
+      return ""
+    }
+    let obj=JSON.parse(x.human_address);
+    // console.log(obj.address);
+    return obj.address
+    // let comp1 = input.replace(/"/g,"");
+    // let comp2 = comp1.split(":");
+    // let comp3 = comp2[4].split(",");
+    // let comp4 = comp3[0].replace(/'/g,"");
+    // let comp5 = comp4.trim();
+    // let comp6 = comp5.replace(/"/g, "");
     // console.log(comp6);
-    return comp6;
+    // return comp6;
   }
   }
 }

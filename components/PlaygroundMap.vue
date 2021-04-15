@@ -42,7 +42,8 @@ export default {
        shadowSize: [32, 20],
        iconAnchor: [2, 48],
        shadowAnchor: [0, 20],
-       popupAnchor: [2, -40]
+       popupAnchor: [2, -40],
+       title: "hey-o"
      });
 
       //***SORT PARKS***Assigns response.data to sortParks. Applies array method .sort(), which takes the function with two parameters as written below.
@@ -56,8 +57,10 @@ export default {
           continue; // Jumps to expression: i++
       } else {
         let marker = L.marker([sortParks[i].ypos, sortParks[i].xpos], {icon: flagMapIcon}).addTo(myMap);
-        //MARKER POPUP
-        marker.bindPopup(sortParks[i].name);
+        //####----MARKER POPUP----####
+        // marker.bindPopup(sortParks[i].name); //original marker
+
+        marker.bindPopup(sortParks[i].name + "<br><b>text</b>");
         }
 
         //   //***GET PARK ADDRESS***
@@ -93,6 +96,10 @@ export default {
     zoomOffset: -1,
     accessToken: 'pk.eyJ1Ijoic3RjYXJsdG9uIiwiYSI6ImNrbjY5dHoyaTAxaXYycG8wZWF2azJxN2QifQ.zOTxW9CuYgd41kecUhOtVA'
   }).addTo(myMap);
+
+
+
+
 
   }
 

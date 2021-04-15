@@ -5,9 +5,9 @@
     <playground-map></playground-map>
     <section class="parkList">
       <header class="parkList__header">Park List</header>
-      <div class="test">
-        <p>{{ parkAddress }}</p><!-- does not render inside parklist element -->
-      </div>
+      <!-- <div class="test">
+        <p>{{ parkAddress }}</p>does not render inside parklist element 
+      </div> -->
       <article class="cardContainer">
         <park-list v-if="parks" v-for="park of parks" :key="park.id" :park="park"></park-list>
       </article>
@@ -77,6 +77,7 @@ export default {
             let txt2 = txt.replace("{address: ","");
             let txt3 = txt2.split(",");
             addToParkAddress.push(txt3[0]);
+            // this.parks[i].cleanAddress=txt3[0]//adds cleanAddress to the key/value pair
             return addToParkAddress;
           }
           getAddress();
