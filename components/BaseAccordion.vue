@@ -50,11 +50,21 @@ export default {
 .content {
   color: #fff;
   text-align: center;
-  margin: 0 1rem;
+  margin: 0 auto 0;
   padding: .5rem 1rem;
   width: 94%;
   background-color: #f2f2f250;
   border-radius: 0 0 8px 8px;
 
+}
+
+@media only screen and (max-width: 474px) {
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  img {
+    display: none;
+  }
 }
 </style>

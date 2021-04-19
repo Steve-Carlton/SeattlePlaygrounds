@@ -86,6 +86,13 @@ h2 {
     grid-row-gap: 2rem;
   }
 
+@media only screen and (max-width: 474px) {
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .aboutContainer {
     grid-template-columns: 1fr;

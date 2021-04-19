@@ -92,16 +92,28 @@ export default {
 }
 
 @media only screen and (max-width: 474px) {
+
+  #homeIcon {
+    align-items: center;
+    margin: auto;
+    margin-bottom: .5rem;
+  }
   .nav ul {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: stretch;
   }
 
-  .nav-item a {
+  .nav a {
     text-align: center;
-    width: 95%;
-    margin: .5rem;
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav-item button {
+    margin: 0;
+    text-align: center;
+    width: 100%;
   }
 }
 

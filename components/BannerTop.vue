@@ -70,50 +70,27 @@ export default {
     display: inline;
   font-size: 150%;
 }
-
-  @media only screen and (max-width: 832px) {
-   .header__container__brandTitle {
-     font-size: 2.5rem;
-   }
-   .header__container__logo img {
-       width: 10rem;
-     }
+  @media only screen and (max-width: 400px) {
+    .header__container{
+      &__logo img{
+        width: 75%;
+      }
+      &__brandTitle{
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+    }
   }
-
-  @media only screen and (max-width: 716px) {
-   .header__container__brandTitle {
-     font-size: 2rem;
-     align-items: flex-start;
-
-   }
-   .header__container__logo img {
-       width: 8rem;
-     }
-  }
-
-  @media only screen and (max-width: 570px) {
-    .header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .header__container {
-      flex-direction: column;
-      line-height: .1rem;
-    }
-    .header__container__logo {
-      padding: 0rem;
-    }
-    .header__container__logo img {
-      margin: 1rem 0 0 0;
-    }
-    .header__container__brandTitle {
-      font-size: 2.75rem;
-      align-items: center;
-      position: relative;
-      top: 0rem;
-    }
+  @media only screen and (max-width: 600px) {
+       .header {
+         padding-bottom: 2.5rem;
+         &__container {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           text-align: center;
+         }
+       }
   }
 </style>

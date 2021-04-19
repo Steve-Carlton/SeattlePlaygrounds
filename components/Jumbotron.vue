@@ -101,6 +101,26 @@ export default {
   }
 }
 
+@media only screen and (max-width: 450px) {
+  .jumbotron {
+    padding: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .jumboButton-container {
+    justify-content: center;
+    margin: auto;
+  }
+
+}
 
   @media only screen and (max-width: 330px) {
     .jumbotron {
