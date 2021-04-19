@@ -25,7 +25,20 @@ export default {
       { id: 2, jumboTagline: "On the go from the ground up!", jumboSubTag: "This site works across all devices. And does it well.", jumboCopy: "Seattle Playgrounds is the only playground resource thoughfully designed & fully operational across all your devices."}
       ]
     }
-  }
+  },
+  head() {
+     return {
+       title: "Seattle Playgrounds | Welcome!",
+       meta: [
+         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+         {
+           hid: 'Seattle Playgrounds',
+           name: 'Seattle Playgrounds',
+           content: 'Welcome to Seattle Playgrounds. Discover available playground and location information.'
+         }
+       ]
+     }
+   }
 }
 </script>
 

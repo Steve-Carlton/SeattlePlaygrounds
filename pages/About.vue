@@ -2,7 +2,7 @@
 <main class="about">
   <banner-top></banner-top>
   <navbar></navbar>
-  <h2>What would you like to know?</h2>
+  <h2>About Seattle Playgrounds</h2>
   <section class="about__aboutContainer">
     <!-- ##### ACCORDION ##### -->
     <section class="aboutCopy">
@@ -39,13 +39,13 @@ export default {
   },
   head() {
      return {
-       title: this.title,
+       title: "Seattle Playgrounds | About",
        meta: [
          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
          {
-           hid: 'description',
-           name: 'description',
-           content: 'My custom description'
+           hid: 'About',
+           name: 'About Seattle Playgrounds',
+           content: 'About the Seattle Playgrounds project.'
          }
        ]
      }

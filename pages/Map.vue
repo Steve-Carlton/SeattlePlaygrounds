@@ -67,7 +67,20 @@ export default {
     .finally(() => this.loading = false)
 
   // ###### methods: {}
-  }
+  },
+  head() {
+     return {
+       title: "Seattle Playgrounds | Map",
+       meta: [
+         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+         {
+           hid: 'Map',
+           name: 'Seattle Playgrounds map',
+           content: 'Map that shows locations for playgrounds in Seattle'
+         }
+       ]
+     }
+   }
 }
 </script>
 

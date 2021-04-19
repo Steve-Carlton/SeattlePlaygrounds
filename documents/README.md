@@ -12,13 +12,14 @@ SEO is a group of practices that may help your website get in front of more user
 
 • Have a relevant title in your head tag.
 
-• Use heading tags judiciously and appropriately. Filling a page with heading tags or irrelevant hidden text will lower your SEO rank.
+• Use header tags judiciously and appropriately. Filling a page with heading tags or irrelevant hidden text will lower your SEO rank.
 
-• Quality backlinks increase your SEO rank. Meaning, link to relevant sites and have relevant sites link to you.
+• Quality backlinks increase your SEO rank. Meaning, link to a diversity of relevant sites and have a diversity of relevant sites link to you.
 
 • Including social tags may raise engagement, site visibility, and traffic.
-• Results can be measured using KPI tools.
 
-As SEO relates to my project, I would want to reevaluate the usage and contents of my heading tags. I would expand the options for and increase the number of social tags. And I would create more external links on the about page to other relevant resources.
+• Results can be measured using KPI tools, e.g. Google Analytics, heatmaps.
 
-Add a social page that links or embeds relevant social media accounts.
+As SEO relates to my project, I would want to put my heading tags under more scrutiny and reevaluate their language and usage in the wake of this lesson. I would expand the options for and increase the number of social tags. I would create more external links on the about page to other relevant resources. And Seattle's Open Data project asks for submissions to let them know about projects using their data-- it might be fun reaching out to them in that respect.
+
+Lastly, adding a social page that links or embeds relevant social media accounts would add content and perhaps encourage user engagement as well.
