@@ -1,7 +1,7 @@
 <template>
   <section class="jumbotron">
     <h2>{{jumboProp.jumboTagline}}</h2>
-    <h3 class="lead">{{jumboProp.jumboSubTag}}</h3>
+    <h3 class="lead">{{jumboProp.jumboSubTag}} <a v-if="jumboProp.jumboLink" href="https://data.seattle.gov/" target="_blank">{{ jumboProp.jumboLink }}</a></h3>
     <!-- if jumboGraphics array item present, render on page -->
     <div v-if="jumboProp.jumboGraphics" class="CTAcontainer">
       <a href="https://www.twitter.com/" target="blank"><img class="twitterCTA" src="../assets/img/twitter-bird.png" alt="www.twitter.com"></a>
@@ -9,7 +9,7 @@
     </div>
     <p>{{ jumboProp.jumboCopy }}</p>
     <!-- if jumboButton array item present, render on page -->
-    <!-- use router-link for link to other views -->
+    <!-- use router-link/nuxt-link for link to other views -->
     <div class="jumboButton-container"><nuxt-link class="jumboButton" v-if="jumboProp.jumboButton" to="/map">{{ jumboProp.jumboButton }}</nuxt-link></div>
   </section>
 </template>
@@ -49,6 +49,17 @@ export default {
     font-size: 1.25rem;
     font-weight: 500;
   }
+
+  .lead a {
+    color: #fff;
+    transition: linear;
+    text-decoration: underline;
+    transition: all .25s cubic-bezier(.67,-.51,.42,1.43);
+    &:hover {
+    font-style: italic;
+    font-size: 105%;
+  }
+}
 
   .CTAcontainer {
     display: flex;

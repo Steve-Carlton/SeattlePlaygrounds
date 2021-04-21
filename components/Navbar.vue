@@ -15,7 +15,7 @@
         </li>
         <li class="nav-item">
           <button class="btn btn-info nav-link" type="button" @click="toggle" data-placement="bottom" title="Click to Show/Hide">
-            Spread the word!
+            Spread the Word!
           </button>
         </li>
       </ul>
@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       jumbotronArray: [//this is an array of objects
-      { id: 0, jumboTagline: "Your newest little lifehack.", jumboSubTag: "Spread the Love!", jumboGraphics: "Tweet #SeattlePGs", jumboCopy: "Hey there smartypants! Want to help this project? Go on and tweet about it! ;D"}
+      { id: 0, jumboTagline: "Your newest little lifehack.", jumboSubTag: "Spread the Word!", jumboGraphics: "Tweet #SeattlePGs", jumboCopy: "Hey there smartypants! Want to help this project? Go on and tweet about it! ;D"}
       ]
     }
   }

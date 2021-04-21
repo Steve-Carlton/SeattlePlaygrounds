@@ -1,20 +1,10 @@
-# sp1
+# Seattle Playgrounds  
 
-## Build Setup
+A project providing playground information for Seattle leveraging the Seattle.gov Open Data Portal API. Completed in concert with UW certificate in Front-End Web Development.  
 
-```bash
-# install dependencies
-$ npm install
+## URL
+https://admiring-shaw-47ed8b.netlify.app/  
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+### Author  
+**Steve Carlton**  
+April, 2021
