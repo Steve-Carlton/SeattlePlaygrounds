@@ -31,7 +31,7 @@ export default {
 data() {
   return {
       accordionArray: [
-        { id: 0, title: 'About this project', image: image1, copy: "Undertaken with the belief that equal and convenient access to public facilities is an integral component of the civic trust, Seattle Playgrounds was born in the shadow of the 2020 pandemic to improve the quality of playground information for parents, childcare providers, and the general public. Thanks for stopping by! :D", legal: "This project is maintained by an independent individual of Seattle for the benefit of the civic good and is in no way affiliated with any governmental agency."},
+        { id: 0, title: 'About this project', image: image1, copy: "Undertaken with the belief that equal and convenient access to public facilities is an integral component of the civic trust, Seattle Playgrounds was born in the shadow of the 2020 pandemic to improve the quality of playground information for parents, childcare providers, and the general public. Thanks for stopping by! :D", legal: "This project is fully independent from the city of Seattle for the benefit of the civic good and is in no way affiliated with any governmental agency."},
         { id: 1, title: "Resources", image: image2, copy: "For official park info from the city of Seattle please visit: ", link: "www.seattle.gov/parks"},
         { id: 2, title: "What's the latest?", image: image3, copy: "Core functionality is currently under development. Stay tuned for addtional features! @SeattlePGs"}
       ]
@@ -48,25 +48,28 @@ data() {
 
 .img-fluid {
   border: 2px solid none;
-  max-width: 75%;
-  min-width: 5rem;
+  max-width: 65%;
+  min-width: 25%;
+  width: 75%;
   height: auto;
 }
 
 img {
   border-radius: 2rem;
+  max-width: 5rem;
 }
 
 p {
   font-size: 1.25rem;
-  margin: .5rem;
-  text-align: left;
+  text-align: center;
+  margin: 1rem 10% 0;
 }
 
 h6 {
   font-size: .75rem;
-  margin: .5rem;
   text-align: left;
+  padding: 1rem;
+  margin: 0 auto 0;
 }
 
 a {
