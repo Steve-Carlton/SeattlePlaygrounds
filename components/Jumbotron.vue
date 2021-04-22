@@ -2,6 +2,7 @@
   <section class="jumbotron">
     <h2>{{jumboProp.jumboTagline}}</h2>
     <h3 class="lead">{{jumboProp.jumboSubTag}} <a v-if="jumboProp.jumboLink" href="https://data.seattle.gov/" target="_blank">{{ jumboProp.jumboLink }}</a></h3>
+    <!-- pass the href as it's own prop to dynamically include links inside other prop strings-->
     <!-- if jumboGraphics array item present, render on page -->
     <div v-if="jumboProp.jumboGraphics" class="CTAcontainer">
       <a href="https://www.twitter.com/" target="blank"><img class="twitterCTA" src="../assets/img/twitter-bird.png" alt="www.twitter.com"></a>

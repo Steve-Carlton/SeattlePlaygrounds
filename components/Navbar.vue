@@ -14,7 +14,7 @@
           <nuxt-link to="/about" class="nav-link">About</nuxt-link>
         </li>
         <li class="nav-item">
-          <button class="btn btn-info nav-link" type="button" @click="toggle" data-placement="bottom" title="Click to Show/Hide">
+          <button class="nav-link" type="button" @click="toggle" data-placement="bottom" title="Click to Show/Hide">
             Spread the Word!
           </button>
         </li>
@@ -73,6 +73,15 @@ export default {
   background: #f2f2f225;
   color: white;
   text-shadow: 2px 1px 4px #00000025;
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.25);
+  }
+  &:active {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #00000015;
+    box-shadow: none;
+  }
 }
 
 #homeIcon {
@@ -83,7 +92,11 @@ export default {
   width: 3rem;
   height: 3rem;
   border: none;
+  border-radius: 50%;
   background: none;
+  &:active {
+    background-color: #00000015;
+  }
 }
 #homeIcon img {
   width: 100%;
