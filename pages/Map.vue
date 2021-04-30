@@ -58,8 +58,7 @@ export default {
       let sortParks = response.data.sort((p1, p2) => (p1.name < p2.name) ? -1 : (p1.name > p2.name) ? 1 : 0);
 
       (this.parks = sortParks)
-      console.log(sortParks);
-
+      // console.log(sortParks);
 
     })
     .catch(error => {

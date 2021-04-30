@@ -24,12 +24,12 @@ export default {
   methods: {
     //below function skips cards that do not have an location_1 field. Returns Make a counter + an array of addresses to pull from to fill in data.
     //passing in park.location_1. Parsing human_address. Returning obj.address.
-   streetAddress(x) {
-    if (!x) {
-      return ""
-    }
-    let obj=JSON.parse(x.human_address);
-    return obj.address //'address' is initiated AND used here
+    streetAddress(x) {
+      if (!x) {
+        return "6385 NE 85th St."
+      }
+      let obj=JSON.parse(x.human_address);
+      return obj.address //'address' is initiated AND used here
     }
   }
 
