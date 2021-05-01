@@ -4,10 +4,11 @@
     <navbar></navbar>
     <playground-map></playground-map>
     <section class="parkList">
-      <header class="parkList__header">Park List</header>
+      <p class="hotfix">spacer</p>
+      <!-- <header class="parkList__header">Park List</header>
       <article class="cardContainer">
         <park-list v-if="parks" v-for="park of parks" :key="park.id" :park="park"></park-list>
-      </article>
+      </article> -->
     </section>
   </main>
 </template>
@@ -112,6 +113,12 @@ main {
   padding: 0 2rem;
   border: .5rem solid lightsteelblue;
   border-radius: 8px;
+}
+
+p {
+  visibility: hidden;
+  margin-bottom: 0;
+  margin-top: 10rem;
 }
 
 .parkList__header {
